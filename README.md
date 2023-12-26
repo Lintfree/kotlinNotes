@@ -1,2 +1,2 @@
 # kotlinNotes
- news
+ My notes while learning Kotlin
