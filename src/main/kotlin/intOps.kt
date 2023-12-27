@@ -118,6 +118,6 @@ fun main() {
     //playerLevel += 1 compiler error must convert 1 to UInt first
     //playerLevel += levelsToAdd error cannot add an Int to a UInt
     print(playerLevel * 10u) // is allowed
-    //print(playerLevel * 10) error is not allowed
+    //print(playerLevel * 10) error is not allowed because playerLevel is UInt
 
 }
