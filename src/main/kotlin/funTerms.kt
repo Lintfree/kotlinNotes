@@ -11,6 +11,7 @@ fun main() {
     println(range1(10))
     println(range2())
     (1..3).toList().also(::println) //range3
+
     // Booleans
     println( 1 in 1 until 3) //range4 is 1 in 1 to 3  true
     println(3 in 1 until 3) //range5 is 3 in 1 to 3, false
@@ -20,10 +21,11 @@ fun main() {
     // .. is used to specify an inclusive upper bound, meaning the end value is included in the range.
     println(2 !in 1..3) //range7 is 2 not in 1..3 = false
     println('x' in 'a'..'z') //range8 char x is  in a..z
+    fun conc() = print(readln().toInt() in 1..9) //prints true if in range or else false
 }
 
 
-fun printMessagef(message: String): Unit {                              // 1{                                                                       // 1
+fun printMessagef(message: String): {                              // 1{                                                                       // 1
     println(message)
 }
 

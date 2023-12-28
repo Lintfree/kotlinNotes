@@ -1,6 +1,41 @@
 import kotlin.math.PI
 
-fun main(args: Array<String>) {
+/*
+You declare functions in Kotlin using the fun keyword,
+a name, a list of parameters (if needed), the return type, and the function body.
+the fundamental syntax for declaring a function is as follows:
+
+fun functionName(param1: Type1, param2: Type2, ...): ReturnType {
+    // Function body
+    return value
+}
+ */
+
+
+val customGreeting = greet(name = "Bob", greeting = "Welcome")
+println(customGreeting) // Output: Welcome, Bob! This would go in main
+fun greet(name: String, greeting: String = "Hello"): String {
+    return "$greeting, $name!"
+}
+
+
+val custGreet = greet2("Alice")
+fun greet2(name: String): String {
+    return "Hello, $name!" //returns to whatever called greet
+}
+
+/*
+Kotlin also supports named arguments, allowing you to note the names of the parameters when invoking the function.
+This feature is especially helpful when a function has numerous parameters with default values,
+and you want to provide a non-default value for a parameter that isn't the last one on the list:
+
+greet(name = "Bob", greeting = "Hi")
+Named arguments amplify code readability and enable calling functions with parameters in an order different from how they were defined.
+ */
+
+
+
+fun usingArgs(args: Array<String>) {
     hello("World")
     printMessage("Hello")
     println(sum(1, 2))
@@ -99,7 +134,7 @@ fun main() {
 }
 */
 
-fun sum(x: Int, y: Int): Int {
+fun addition(x: Int, y: Int): Int {
     return x + y
 }
 
@@ -157,16 +192,16 @@ radius = circumference / (2 * PI)
 area = PI * radius * radius
  */
 
-fun circleArea(radius: Int): Double {
+fun circleArea(radius: Int): {
     return Math.PI * radius * radius
 }
 
-fun circleArea2(radius: Int): Double = Math.PI * radius * radius
+fun circleArea2(radius: Int) = Math.PI * radius * radius
 
 //fun intervalInSeconds(hours: Int, minutes: Int, seconds: Int) =
 //((hours * 60) + minutes) * 60 + seconds
 
-fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) = ((hours * 60) + minutes) * 60 + seconds
+fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0)= ((hours * 60) + minutes) * 60 + seconds
 
 fun joinOptions(options: Collection<String>) =
     options.joinToString(prefix = "[", postfix = "]")
