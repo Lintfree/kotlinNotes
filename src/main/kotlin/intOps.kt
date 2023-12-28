@@ -120,4 +120,55 @@ fun main() {
     print(playerLevel * 10u) // is allowed
     //print(playerLevel * 10) error is not allowed because playerLevel is UInt
 
+    /*
+    if odd number, add 1, else add 2.
+    if (number % 2 == 0) {
+        println(number + 2)
+    } else {
+       println(number + 1)
+    }
+    better way below
+     */
+
+    //fun main() {
+        var num4 = readln().toInt()
+        println(++num4 + num4 % 2) //adds 1 before var is used then adds modulus
+
+    //last digit
+    val a = readln().toInt()
+    val lastDigit = a % 10
+    println("$lastDigit")
+
+    //better way
+    // fun main() = print(readLine()!!.last()) I didn't know about .last()
+
+
+    /*
+    You are given a number that represents the number of seconds passed since 1.1.1970.
+    1/1/1970 is unix epoch which means:
+    Unix time is currently defined as the number of non-leap seconds which have passed since 00:00:00 UTC on Thursday, 1 January 1970
+    Write a program that calculates the current time,
+    i.e., finds the hours, minutes, and seconds of the given number of seconds.
+    Format: hours:minutes:seconds
+
+    fun main() {
+        val totalSeconds = System.currentTimeMillis() / 1000 // do not change this line
+        val days = totalSeconds / 86400                  // how many days
+        val hours = (totalSeconds % 86400) / 3600        // how many hours
+        val minutes = (totalSeconds % 3600) / 60         // how many minutes
+        val seconds = totalSeconds % 60                  // how many seconds
+        println("$days:$hours:$minutes:$seconds")
+
+    }
+     */
+
+    /*
+    you cannot check the equality of Int and Long! You can compare Int and Long freely with >, <. >=, <=,
+    but cannot use == and !=. You can check equality only for the same types, so you need to convert Int to Long
+
+    val left = 100
+    val right = 200
+    val number = readln().toInt()
+    val inRange = number >= left && number <= right // joining two expressions using AND
+     */
 }
