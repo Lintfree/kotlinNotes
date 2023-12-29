@@ -1,6 +1,6 @@
 import kotlin.math.PI
-
-/*
+fun main() {
+    /*
 You declare functions in Kotlin using the fun keyword,
 a name, a list of parameters (if needed), the return type, and the function body.
 the fundamental syntax for declaring a function is as follows:
@@ -12,19 +12,19 @@ fun functionName(param1: Type1, param2: Type2, ...): ReturnType {
  */
 
 
-val customGreeting = greet(name = "Bob", greeting = "Welcome")
-println(customGreeting) // Output: Welcome, Bob! This would go in main
-fun greet(name: String, greeting: String = "Hello"): String {
-    return "$greeting, $name!"
-}
+    val customGreeting = greet(name = "Bob", greeting = "Welcome")
+    println(customGreeting) // Output: Welcome, Bob! This would go in main
+    fun greet(name: String, greeting: String = "Hello"): String {
+        return "$greeting, $name!"
+    }
 
 
-val custGreet = greet2("Alice")
-fun greet2(name: String): String {
-    return "Hello, $name!" //returns to whatever called greet
-}
+    val custGreet = greet2("Alice")
+    fun greet2(name: String): String {
+        return "Hello, $name!" //returns to whatever called greet
+    }
 
-/*
+    /*
 Kotlin also supports named arguments, allowing you to note the names of the parameters when invoking the function.
 This feature is especially helpful when a function has numerous parameters with default values,
 and you want to provide a non-default value for a parameter that isn't the last one on the list:
@@ -35,18 +35,18 @@ Named arguments amplify code readability and enable calling functions with param
 
 
 
-fun usingArgs(args: Array<String>) {
-    hello("World")
-    printMessage("Hello")
-    println(sum(1, 2))
-    println(sum2(1,2))
-    printMessageWithPrefix(prefix = "Log", message = "Hello") //Looks like parameters here take precedence
-    printMessageWithPrefix(message = "Hello", prefix = "Log") // Look below to see where it changes to Info
-    printMessageWithPrefix("Hello", "Log") //Stuff in gray is not needed, just a reminder what it is
-    printMessageWithPrefix("Hello") //changed prefix to Info in function call below
-    println(circleArea(2))
-    println(circleArea2(2))
-    /*
+    fun usingArgs(args: Array<String>) {
+        hello("World")
+        printMessage("Hello")
+        println(sum(1, 2))
+        println(sum2(1, 2))
+        printMessageWithPrefix(prefix = "Log", message = "Hello") //Looks like parameters here take precedence
+        printMessageWithPrefix(message = "Hello", prefix = "Log") // Look below to see where it changes to Info
+        printMessageWithPrefix("Hello", "Log") //Stuff in gray is not needed, just a reminder what it is
+        printMessageWithPrefix("Hello") //changed prefix to Info in function call below
+        println(circleArea(2))
+        println(circleArea2(2))
+        /*
     Not sure what's better, this one or the next one
     this one is slightly shorter but not as readable
     println(intervalInSeconds(1, 20, 15))
@@ -55,27 +55,27 @@ fun usingArgs(args: Array<String>) {
     println(intervalInSeconds(0, 10, 0))
     println(intervalInSeconds(1, 0, 1))
      */
-    println(intervalInSeconds(1, 20, 15))
-    println(intervalInSeconds(minutes = 1, seconds = 25))
-    println(intervalInSeconds(hours = 2))
-    println(intervalInSeconds(minutes = 10))
-    println(intervalInSeconds(hours = 1, seconds = 1))
-    //join to string
-    val options = listOf("a", "b", "c")
-    println(joinOptions(options))  // [a, b, c]
-    println(joinOptions(emptyList()))  // []
-    println(joinOptions(listOf("a", "b", "c")))  // [a, b, c]
-    println(joinOptions(listOf("a", "b", "c", "d")))  // [a, b, c, d]
-    println(joinOptions(listOf("a", "b", "c", "d", "e")))  // [a, b, c, d, e]
-    println(joinOptions(listOf("a", "b", "c", "d", "e", "f")))  // [a, b, c, d, e, f]
-    println(joinOptions(listOf("a", "b", "c", "d", "e", "f", "g")))  // [a, b, c, d, e, f, g]
-}
+        println(intervalInSeconds(1, 20, 15))
+        println(intervalInSeconds(minutes = 1, seconds = 25))
+        println(intervalInSeconds(hours = 2))
+        println(intervalInSeconds(minutes = 10))
+        println(intervalInSeconds(hours = 1, seconds = 1))
+        //join to string
+        val options = listOf("a", "b", "c")
+        println(joinOptions(options))  // [a, b, c]
+        println(joinOptions(emptyList()))  // []
+        println(joinOptions(listOf("a", "b", "c")))  // [a, b, c]
+        println(joinOptions(listOf("a", "b", "c", "d")))  // [a, b, c, d]
+        println(joinOptions(listOf("a", "b", "c", "d", "e")))  // [a, b, c, d, e]
+        println(joinOptions(listOf("a", "b", "c", "d", "e", "f")))  // [a, b, c, d, e, f]
+        println(joinOptions(listOf("a", "b", "c", "d", "e", "f", "g")))  // [a, b, c, d, e, f, g]
+    }
 
-fun hello(name: String) {
-    println("Hello, $name")
-}
+    fun hello(name: String) {
+        println("Hello, $name")
+    }
 
-/*
+    /*
 Functions without return
 If your function doesn't return a useful value then its return type is Unit.
 Unit is a type with only one value – Unit.
@@ -85,13 +85,13 @@ You can skip specific parameters with default values, rather than omitting them 
 However, after the first skipped parameter, you must name all subsequent parameters.
 */
 
-fun printMessage(message: String) {
-    println(message)
-}
+    fun printMessage(message: String) {
+        println(message)
+    }
 // `return Unit` or `return` is optional
 
 
-/*
+    /*
  You can declare your own functions in Kotlin using the fun keyword.
 
 function parameters are written within parentheses ().
@@ -126,7 +126,7 @@ The important thing is that there should be only one main function in your progr
 recommended coding convention is that you name functions starting with a lowercase letter and use camel case with no underscores.
 */
 
-/*
+    /*
 Commented out because it is added in the main function at top
 
 fun main() {
@@ -134,20 +134,20 @@ fun main() {
 }
 */
 
-fun addition(x: Int, y: Int): Int {
-    return x + y
-}
+    fun addition(x: Int, y: Int): Int {
+        return x + y
+    }
 
-/*
+    /*
 To make your code more concise, you can use single-expression functions.
 For example, the sum() function can be shortened:
 You can remove the curly braces {} and declare the function body using the assignment operator =.
 And due to Kotlin's type inference, you can also omit the return type. The sum() function then becomes one line:
  */
 
-fun sum2(x: Int, y: Int) = x + y
+    fun sum2(x: Int, y: Int) = x + y
 
-/*
+    /*
 For concise code, when calling your function, you don't have to include parameter names.
 However, including parameter names does make your code easier to read.
 This is called using named arguments. If you do include parameter names, then you can write the parameters in any order.
@@ -159,7 +159,7 @@ Omitting the return type is only possible when your function has no body ({}).
 Unless your function's return type is Unit.
 */
 
-/*
+    /*
 fun main() {
     // Uses named arguments with swapped parameter order
     printMessageWithPrefix(prefix = "Log", message = "Hello")
@@ -167,11 +167,11 @@ fun main() {
 }
 */
 
-fun printMessageWithPrefix(message: String, prefix: String = "Info") {
-    println("[$prefix] $message")
-}
+    fun printMessageWithPrefix(message: String, prefix: String = "Info") {
+        println("[$prefix] $message")
+    }
 
-/*
+    /*
 Default parameter values
 
 You can define default values for your function parameters.
@@ -185,23 +185,25 @@ fun main() {
 }
 */
 
-/*
+    /*
 Functions practice
 radius of circle in Int format as a parameter and output the area of the circle
 radius = circumference / (2 * PI)
 area = PI * radius * radius
  */
 
-fun circleArea(radius: Int): {
-    return Math.PI * radius * radius
-}
+    fun circleArea(radius: Int): {
+        return Math.PI * radius * radius
+    }
 
-fun circleArea2(radius: Int) = Math.PI * radius * radius
+    fun circleArea2(radius: Int) = Math.PI * radius * radius
 
 //fun intervalInSeconds(hours: Int, minutes: Int, seconds: Int) =
 //((hours * 60) + minutes) * 60 + seconds
 
-fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0)= ((hours * 60) + minutes) * 60 + seconds
+    fun intervalInSeconds(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) = ((hours * 60) + minutes) * 60 + seconds
 
-fun joinOptions(options: Collection<String>) =
-    options.joinToString(prefix = "[", postfix = "]")
+    fun joinOptions(options: Collection<String>) =
+        options.joinToString(prefix = "[", postfix = "]")
+
+}

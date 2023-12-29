@@ -47,12 +47,51 @@ private fun main() {
 	println(message) // Output: Three
 
 	//when expressions can also be used with ranges and more complex conditions.
-	val number3 = 15
+
+	val number3 = readln().toInt()
 	when {
 		number3 < 0 -> println("Negative number")
 		number3 in 1..10 -> println("Number between 1 and 10")
 		number3 % 2 == 0 -> println("Even number")
 		else -> println("Odd number greater than 10")
+	}
+
+	// input 3 variables
+
+	val f = readln().toInt()
+	val g = readln().toInt()
+	val h = readln().toInt()
+
+	// a = hours needed to sleep
+	//b = no more than b hours
+	//h = hours slept today
+
+	if (h in f..g) {
+		println("Normal")
+	} else if (h < f) {
+		println("Deficiency")
+	} else {
+		println("Excess")
+	}
+
+	// hyperskill problem wanted how many ifs, correct but better if a when statement
+	val name = readln()
+	if (name == "Emily") {
+		println("sister")
+		} else if (name == "Luke") {
+			println("brother")
+		} else if (name == "James") {
+		println("father")
+		} else {
+		println("mother")
+		}
+
+	// good example of use of if && ||
+	val leapyear : Int = readln().toInt()
+	if (leapyear % 4 == 0 && leapyear % 100 != 0 || leapyear % 400 == 0) {
+		println("Leap")
+	} else {
+		println("Regular")
 	}
 }
 
