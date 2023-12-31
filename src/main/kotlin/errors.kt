@@ -156,4 +156,26 @@ fun main() {
 	If the string does not contain the character with the specified index,
 	a StringIndexOutOfBoundsException will be thrown.
 	 */
-}v
+
+	/*
+
+	val inputString = readln()
+	val i = (inputString.length) - 1
+	val lastIndexChar = (inputString[i])
+	println(lastIndexChar)
+
+	same as:
+	val lastIndexChar = inputString[inputString.length-1]
+	println(lastIndexChar)
+	 */
+
+	val a = readln().toInt()
+	val b = readln().toInt()
+	try {
+		println(a / b)
+	}
+	catch (e: ArithmeticException) {
+		println("Division by zero, please fix the second argument!")
+	}
+
+}

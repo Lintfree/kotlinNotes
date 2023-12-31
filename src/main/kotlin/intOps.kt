@@ -62,7 +62,7 @@ fun main() {
     println(Int.MIN_VALUE)  // -2147483648
     println(Int.MAX_VALUE)  // 2147483647
     println(Long.MIN_VALUE) // -9223372036854775808
-    println(Long.MAX_VALUE) // 9223372036854775807
+    println(Long.MAX_VALUE) // 922_3372_036_854_775_807
     // It is also possible to get the size of an integer type in bytes or bits (1 byte = 8 bits):
     println(Int.SIZE_BYTES) // 4
     println(Int.SIZE_BITS)  // 32
