@@ -48,5 +48,112 @@ fun main() {
 		println("Error: ${e.message}")
 	}
 
+	/*
+	Exceptions are objects that contain information about an error.
+	The standard method for triggering an exception is by using the throw keyword,
+	followed by an instance of the exception.
+	 */
 
-}
+	val exception = Exception("This is an exception")
+	//throw exception
+
+	//throwing an exception in a try-catch block
+	try {
+		val result = 10 / 0
+	} catch (e: ArithmeticException) {
+		throw Exception("$exception")
+	}
+
+	/*
+	Kotlin also has a finally block that executes the code,
+	irrespective of whether an exception was triggered or not,
+	typically used for cleaning up resources.
+	try {
+        // risky code that could trigger an exception
+	} catch (e: Exception) {
+        // handling the exception
+	} finally {
+        // code that will execute no matter what
+	}
+	 */
+
+	/*
+	All exceptions are unchecked in Kotlin because it doesn't have checked exceptions.
+	Unchecked Exceptions
+	These exceptions aren't checked at compilation.
+	They usually result from programming mistakes like logic errors or incorrect use of an API.
+	Unchecked exceptions are subclasses of RuntimeException and include examples such as
+	IndexOutOfBoundsException or NullPointerException.
+	 */
+
+	fun accessElement(list: List<String>, index: Int) {
+		try {
+			println(list[index])
+		} catch (e: IndexOutOfBoundsException) {
+			println("Index is out of bounds.")
+		}
+	}
+
+	/*
+	The main constructs for exception handling in Kotlin are try, catch, and finally blocks.
+	try: This block encloses the code that might trigger an exception.
+	If an exception occurs within this block, it is thrown, and the control is transferred to the corresponding catch block.
+	catch: This block captures the exceptions thrown from the try block.
+	It should follow the try block, and you can have multiple catch blocks to manage different types of exceptions.
+	finally: This block is optional and runs after the try and catch blocks,
+	whether or not an exception has been thrown or caught. It's typically used to clean up resources.
+	 */
+
+	fun divide(a: Int, b: Int): Int {
+		try {
+			return a / b
+		} catch (e: ArithmeticException) {
+			println("Cannot divide by zero!")
+		} finally {
+			println("Operation attempted.")
+		}
+		return 0
+	}
+
+	/*
+	Kotlin also supports try as an expression,
+	letting you assign the result of a try block to a variable:
+	 */
+	val result = try {
+		divide(10, 0)
+	} catch (e: Exception) {
+		-1
+	} finally {
+		println("Operation completed.")
+	}
+
+	/*
+	The subtype is a datatype that is related to another datatype (supertype)
+	and inherits common characteristics and rules of behavior from it.
+	Note that the rules of behavior of different subtypes may vary.
+
+	Logically, a supertype is a type whose properties and methods specify
+	the characteristics and rules of behavior that its subtypes will follow.
+
+	An Error indicates serious problems that a reasonable application should not try to process.
+
+	The RuntimeException type is a rather special subtype of Exception.
+	Subtypes of RuntimeException, such as ArithmeticException and NumberFormatException,
+	can be thrown during the normal program execution.
+	These exceptions are usually caused by insufficient checks in the program code, and can be prevented programmatically.
+	a hierarchy of subtypes descended from RuntimeException
+
+	ArithmeticException is the runtime exception that is thrown when the code attempts an illegal arithmetic operation.
+
+	During calculations you can get another type of exception: NumberFormatException.
+	It is thrown when a method expects to receive a number, but the actual input is something else
+
+	IndexOutOfBoundsException occurs when you access some non-existent index
+	For example, if you are trying to access the tenth element of a collection that has only 5 elements,
+	your index will be out of bounds.
+
+	StringIndexOutOfBoundsException, a special type of IndexOutOfBoundsException
+	If the string does not contain the character with the specified index,
+	a StringIndexOutOfBoundsException will be thrown.
+	 */
+}v
