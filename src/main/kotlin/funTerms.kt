@@ -25,7 +25,7 @@ fun main() {
 }
 
 
-fun printMessagef(message: String): {                              // 1{                                                                       // 1
+fun printMessagef(message: String): Unit {                              // 1
     println(message)
 }
 
