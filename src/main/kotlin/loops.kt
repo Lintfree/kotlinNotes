@@ -116,4 +116,54 @@ fun main() {
 	print(p)
 
 
+	//repeat
+	val reps = readln().toInt()
+	var j = 1
+	var numOfReps = 0
+	// prints out like this 1 2 2 3 3 with the input limiting the amout printed out
+	do {
+		repeat(j) {
+			if (numOfReps < reps)
+				print("$j ")
+			numOfReps++
+		}
+		j++
+	}while (numOfReps < reps)
+
+	/*
+	this worked also but came back as incorrect in Hyperskill
+	for (i in 0..reps) {
+		repeat(i) {
+			if (numOfReps < reps && i < reps)
+			print("$i ")
+		numOfReps++
+	}
 }
+*/
+
+	//finds max of input
+	var max  = 1
+	do {
+		val input = readln().toInt()
+		if (input > max) {
+			max = input
+		}
+	} while (input != 0)
+	println(max)
+
+	//finds sum of input
+
+	var add = 0
+	do {
+		val input = readln().toInt()
+		add += input
+	}
+	while (input != 0)
+	println(add)
+}
+
+
+
+
+
+
