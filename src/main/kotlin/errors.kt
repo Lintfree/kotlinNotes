@@ -178,4 +178,36 @@ fun main() {
 		println("Division by zero, please fix the second argument!")
 	}
 
+
+	val (var1 , op, var2) = readln().split(" ")
+	val y = var1.toLong()
+	val z = var2.toLong()
+	try {
+		when (op) {
+			"+" -> println (y + z)
+			"-" -> println (y - z)
+			"*" -> println (y * z)
+			"/" -> println (y / z)
+			else -> println("Unknown operator")
+		}
+	}catch (e: ArithmeticException) {
+		println("Division by 0!")
+	}
+
+	/* or
+    val (firstNumber, op, secondNumber) = readln().split(" ")
+    val a = firstNumber.toLong()
+    val b = secondNumber.toLong()
+    println(
+        when {
+            op == "/" && b == 0L -> "Division by 0!"
+            op == "+" -> a + b
+            op == "-" -> a - b
+            op == "*" -> a * b
+            op == "/" -> a / b
+            else -> "Unknown operator"
+
+        }
+    )
+	*/
 }
