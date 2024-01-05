@@ -210,4 +210,158 @@ fun main() {
         }
     )
 	*/
+
+	/*
+	You can quickly wrap a code block in useful constructs.Select it in the editor and press,Ctrl, Alt, T, (Code | Surround With).
+	The list of available options or wrappers is context-sensitive and depends on the language.
+	For example, you can surround html blocks with tags, and so on.
+	 */
+
+	println("Before the try-catch block") // it will be printed
+	try {
+		println("Inside the try block before an exception") // it will be printed
+		println(2 / 0) // it throws ArithmeticException
+		println("Inside the try block after the exception") // it won't be printed
+	} catch (e: ArithmeticException) {
+		println("Division by zero!") // it will be printed
+	}
+
+	println("After the try-catch block") // it will be printed
+
+	/*
+	Replacing ArithmeticException with Exception or RuntimeException in the catch statement does not change the execution flow of the program.
+	But replacing it, for instance, with NumberFormatException will make the handler unsuitable for the exception and the program will fail.
+	If the result of the execution of the try block throws an exception not foreseen in the catch expression,
+	the program will fail despite all precautions.
+	When an exception is caught by the catch block, it is possible to get some information on it. To do this, we use message:
+	 */
+	try {
+		val d = (2 / 0).toDouble()
+	} catch (e: Exception) {
+		println(e.message)
+	}
+
+	/*
+	You can add as many catch blocks as you need. When an exception occurs in the try block,
+	the runtime system determines the first suitable catch block according to the type of exception; matching goes from top to down.
+	The catch block with the base type has to be written below all the blocks with subtypes.
+	In other words, more specialized handlers (like IOException) must be written before the more general ones (like Exception).
+	Otherwise, the block with the subtype will be ignored.
+	 */
+
+	fun convertStringToDouble(input: String): Double {
+		/**
+		 * It returns a double value or 0 if an exception occurred
+		 */
+		try {
+			return input.toDouble()
+		}
+		catch (e: NumberFormatException) {
+			return 0.0
+		}
+	}
+
+	fun printFifthCharacter(input: String): String {
+		try {
+			return "The fifth character of the entered word is ${input[4]}"
+		} catch (e: StringIndexOutOfBoundsException) {
+			return "The input word is too short!"
+		}
+	}
+
+	/*
+	try-catch-finally
+	The finally block is executed after the try and catch blocks,
+	in situations when you need to perform some finishing actions regardless of whether an exception is thrown.
+	 */
+
+	try {
+		println("Inside the try block")
+		println(2 / 0) // throws ArithmeticException
+	}
+	catch (e: Exception) {
+		println("Inside the catch block")
+	}
+	finally {
+		println("Inside the finally block")
+	}
+
+	println("After the try-catch-finally block")
+
+	/*
+	If we remove the line that throws the ArithmeticException,
+	the finally block will still execute after the try block:
+	 */
+
+	/*
+	code can contain any number of catch blocks or no such blocks at all, and finally blocks can be omitted.
+	However, at least one catch or finally block must be present.
+	This means that when you handle an exception with try, you should add at least one other block: catch or finally.
+	Otherwise, the statement simply won't work.
+	 */
+
+	/*
+	try can be an expression in Kotlin. This means that it may have a return value:
+	 */
+
+	val number: Int = try { "abc".toInt() } catch (e: NumberFormatException) { 0 }
+	println(number) // 0
+
+	/*
+	In the try block, we're trying to assign the value "abc" to the variable number.
+	When we attempt to convert the string "abc" to the Int type, the NumberFormatException is thrown.
+	Then, the catch block is executed, so the number variable takes the value 0.
+
+	The returned value of a try expression is either the last expression in the try block or the last expression in the catch block(s).
+	The contents of the finally block do not affect the result of the expression:
+	 */
+
+	/*
+	Another useful technique is to rethrow exceptions to the caller.
+	You need to add a way to handle exceptions in the code snippet where you call the function that can throw an exception.
+	Here is an example of how to do this with an expression-style try:
+	 */
+
+	fun test() {
+		val result = try {
+			countSomething()
+		} catch (e: ArithmeticException) {
+			throw IllegalStateException(e) // do not forget to deal with it
+		}
+
+		// Working with result
+	}
+
+	try {
+		test()
+	} catch (e: IllegalStateException) {
+		...
+	}
+
+	/*
+	Using try-catch blocks as expressions is an idiomatic way of working with exceptions in Kotlin.
+	You get the result immediately, which is very convenient.
+	Compare this method with a less direct one:
+	 */
+
+	val string = "abc"
+	val number = try {
+		string.toInt()
+	} catch (e: NumberFormatException) {
+		-1
+	}
+
+	// Longer version of the same code
+
+	val string = "abc"
+	var number = 0 // try to avoid var if possible
+	try {
+		number = string.toInt()
+	} catch (e: NumberFormatException) {
+		number = -1
+	}
+
+	/*Remember that you can skip catch or finally when you handle an exception with try,
+	but you can't omit both at the same time.
+	 */
 }
