@@ -364,4 +364,13 @@ fun main() {
 	/*Remember that you can skip catch or finally when you handle an exception with try,
 	but you can't omit both at the same time.
 	 */
+
+	fun returnValue(): Int {
+		val value = readln().toInt()
+		if (value > 0) {
+			throw Exception("It's too big")
+		} else {
+			return (value)
+		}
+	}
 }

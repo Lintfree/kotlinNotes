@@ -47,5 +47,54 @@ fun main() {
 	println(findYears(depo))
 }
 
+/*
+import java.util.Scanner
+val scanner = Scanner(System.`in`)
+
+fun main() {
+	val numOfStudents = readln().toInt()
+	var grade = 0
+	var count = 0
+	var d = 0
+	var c = 0
+	var b = 0
+	var a = 0
+
+	while (count < numOfStudents) {
+		count++
+		grade = scanner.nextInt()
+		if (grade == 2) {
+			d++
+		}else if (grade == 3) {
+			c++
+		}else if (grade == 4) {
+			b++
+		}else if (grade == 5) {
+			a++
+		}
+	}
+	print("$d $c $b $a")
+}
+*/
+// better than above
+import java.util.*
+
+fun main(args: Array<String>) {
+	val scanner = Scanner(System.`in`)
+	// put your code here
+	val n = scanner.nextInt()
+	var (d, c, b, a) = arrayOf(0, 0, 0, 0)
+	repeat(n) {
+		val x = scanner.nextInt()
+		when (x) {
+			2 -> d++
+			3 -> c++
+			4 -> b++
+			5 -> a++
+		}
+	}
+	print("$d $c $b $a")
+}
+
 
 

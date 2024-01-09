@@ -46,4 +46,18 @@ fun main() {
 
 		print(c in a && c in b)
 
+	fun checkNumberRange(number: Int): String {
+		val range = 1..10
+		return if (number in range) "$number is inside the range." else "$number is outside the range."
+	}
+
+	println(checkNumberRange(5))
+	println(checkNumberRange(11))
+
+	//fun main() {
+		val num = readln()!!.toInt()
+		val range2 = readln().toInt()..readln().toInt()
+		println(num in range2)
+	//}
+
 }
