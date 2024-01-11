@@ -1,4 +1,4 @@
-fun sum(a: Int, b: Int, c: Int): Int {
+fun sum(a: Int, b: Double, c: Int): Int {
 	return a + b + c
 }
 

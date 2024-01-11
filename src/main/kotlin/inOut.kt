@@ -247,3 +247,25 @@ You can adapt this code to more complex scenarios based on your specific needs.
      */
 
 }
+
+inport java.util.Scanner
+
+fun perimeter(x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double, x4: Double, y4: Double): Double {
+    var scanner = Scanner(System.`in`)
+    val x1 = scanner.nextDouble()
+    val y1 = scanner.nextDouble()
+    val x2 = scanner.nextDouble()
+    val y2 = scanner.nextDouble()
+    val x3 = scanner.nextDouble()
+    val y3 = scanner.nextDouble()
+    val x4 = scanner.nextDouble()
+    val y4 = scanner.nextDouble()
+
+
+    val side1 = Math.hypot(x1 - x2, y1 - y2)
+    val side2 = Math.hypot(x2 - x3, y2 - y3)
+    val side3 = Math.hypot(x3 - x4, y3 - y4)
+    val side4 = Math.hypot(x4 - x1, y4 - y1)
+    val perimeter = side1 + side2 + side3 + side4
+    return perimeter
+}
