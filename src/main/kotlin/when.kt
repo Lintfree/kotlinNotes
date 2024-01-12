@@ -135,15 +135,15 @@ fun main() {
 		})
 	//same as above
 	//fun main() {
-		val n = readLine()!!.toInt()
-		val f = arrayOf( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55)
+		val n1 = readLine()!!.toInt()
+		val f1 = arrayOf( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55)
 		val t = arrayOf( 0, 1, 3, 6, 10, 15, 21, 28, 36, 45)
 		val p = arrayOf (1, 10, 100, 1000, 10000, 100000)
 
-		if (n in f) println("F")
-		else if (n in t) println("T")
-		else if (n in p) println("P")
+		if (n1 in f1) println("F")
+		else if (n1 in t) println("T")
+		else if (n1 in p) println("P")
 		else println("N")
 	}
-	}
+
 

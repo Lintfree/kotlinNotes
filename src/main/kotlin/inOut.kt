@@ -248,7 +248,7 @@ You can adapt this code to more complex scenarios based on your specific needs.
 
 }
 
-inport java.util.Scanner
+
 
 fun perimeter(x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double, x4: Double, y4: Double): Double {
     var scanner = Scanner(System.`in`)

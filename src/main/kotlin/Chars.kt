@@ -1,3 +1,5 @@
+fun main(args: Array<String>) {
+
 /*
 A character is just a symbol enclosed in single quotes.
 The Char type represents letters (both uppercase and lowercase), digits, and other symbols:
@@ -14,15 +16,15 @@ A character can also be represented by its hexadecimal code in the Unicode table
 The code starts with \u:
  */
 
-val ch = '\u0040' // it represents '@'
-println(ch) // @
+val ch1 = '\u0040' // it represents '@'
+println(ch1) // @
 
 /*
 You can also convert numbers to characters and vice versa.
  */
 
-val ch = 'a'
-println(ch.code)   // 97
+val ch2 = 'a'
+println(ch2.code)   // 97
 val num = 97
 println(num.toChar()) // a
 
@@ -30,8 +32,8 @@ println(num.toChar()) // a
 If you need to read one Char in a whole line, use this construction:
  */
 
-val ch = readLine()!!.first()
-println(ch)
+val ch3 = readLine()!!.first()
+println(ch3)
 
 
 /*
@@ -39,9 +41,9 @@ There are two operators for adding (+) and subtracting (-) integer numbers
 in order to get the next and previous characters according to the Unicode order:
  */
 
-val ch1 = 'b'
-val ch2 = ch1 + 1 // 'c'
-val ch3 = ch2 - 2 // 'a'
+val ch4 = 'b'
+val ch5 = ch1 + 1 // 'c'
+val ch6 = ch2 - 2 // 'a'
 
 /*
 It is possible to use the increment (++) and decrement (--) operators in their prefix and postfix forms.
@@ -89,7 +91,7 @@ Otherwise, it prints false.
 */
 
 fun main() {
-	val ch = readln().first()
+	val ch7 = readln().first()
 	val isDigit = ch >= '\u0030' && ch <= '\u0039'
 
 	println(isDigit)
@@ -133,10 +135,10 @@ val capitalE = small.uppercaseChar()   // 'E'
 	println(upper)
 
 //fun main() {  check if same unicode
-	val first  = readln().toInt()
-	val second : Char = readln().first()
-	val num = first.toChar()
-	println(second == num)
+	val first1  = readln().toInt()
+	val second2 : Char = readln().first()
+	val num3 = first1.toChar()
+	println(second2 == num.toChar())
 
 //fun main() {  checks if chars are in order
 

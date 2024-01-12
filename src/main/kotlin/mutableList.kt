@@ -79,7 +79,7 @@ mutableList.replaceAll { it.toUpperCase() }
 Keep in mind, batch operations like map and filter that transform the list,
 yield a new list; they don't change the original MutableList.
  */
-
+/*
 fun main() {
 	val longs = mutableListOf<Long>(100_000_000_001, 100_000_000_002, 100_000_000_003)
 
@@ -98,3 +98,5 @@ fun main() {
 	val n = 6
 	val elem = list[list[n]] //find n first [] then take that num and then find that num in the list = 8
 }
+
+ */

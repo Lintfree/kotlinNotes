@@ -322,6 +322,7 @@ fun main() {
 	Here is an example of how to do this with an expression-style try:
 	 */
 
+	/*
 	fun test() {
 		val result = try {
 			countSomething()
@@ -337,6 +338,7 @@ fun main() {
 	} catch (e: IllegalStateException) {
 		...
 	}
+	*/
 
 	/*
 	Using try-catch blocks as expressions is an idiomatic way of working with exceptions in Kotlin.
@@ -344,9 +346,9 @@ fun main() {
 	Compare this method with a less direct one:
 	 */
 
-	val string = "abc"
-	val number = try {
-		string.toInt()
+	val string1 = "abc"
+	val number1 = try {
+		string1.toInt()
 	} catch (e: NumberFormatException) {
 		-1
 	}
@@ -354,11 +356,11 @@ fun main() {
 	// Longer version of the same code
 
 	val string = "abc"
-	var number = 0 // try to avoid var if possible
+	var number2 = 0 // try to avoid var if possible
 	try {
-		number = string.toInt()
+		number2 = string.toInt()
 	} catch (e: NumberFormatException) {
-		number = -1
+		number2 = -1
 	}
 
 	/*Remember that you can skip catch or finally when you handle an exception with try,

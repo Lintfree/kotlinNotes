@@ -1,21 +1,21 @@
 fun actionIsCorrect(action: String): Boolean {
-	// something here
+	TODO()
 }
 
 fun remainingValue() {
-	// something here
+	TODO()
 }
 
 fun fillMl() {
-	// something here
+	TODO()
 }
 
 fun buyCoffee() {
-	// something here
+	TODO()
 }
 
 fun takeCoffee() {
-	// something here
+	TODO()
 }
 
 fun main() {

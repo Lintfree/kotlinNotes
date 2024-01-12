@@ -1,4 +1,7 @@
-fun sum(a: Int, b: Double, c: Int): Int {
+import java.util.*
+
+
+fun sum(a: Int, b: Double, c: Int): Double {
 	return a + b + c
 }
 
@@ -18,23 +21,23 @@ finished by ai, review to understand
 */
 
 
-fun findYears(depo: Double): Int{
-    var deposit = depo
-    val interestRate = 1.071
-    val max = 700000
-    var years = 0
-    //
-    while ( deposit < max ) {
-        deposit *= interestRate
-        years++
-    }
-    return years
+fun findYears(depo: Double): Int {
+	var deposit = depo
+	val interestRate = 1.071
+	val max = 700000
+	var years = 0
+
+	while (deposit < max) {
+		deposit *= interestRate
+		years++
+	}
+	return years
 }
 
 
 
 
-fun main() {
+/*fun main() {
 	val a = readln().toInt()
 	val b = readln().toInt()
 	val c = readln().toInt()
@@ -46,6 +49,8 @@ fun main() {
 	val depo = readLine()!!.toDouble()
 	println(findYears(depo))
 }
+
+ */
 
 /*
 import java.util.Scanner
@@ -77,7 +82,7 @@ fun main() {
 }
 */
 // better than above
-import java.util.*
+
 
 fun main(args: Array<String>) {
 	val scanner = Scanner(System.`in`)

@@ -1,4 +1,4 @@
-fun main() {
+/*fun main() {
 
     printMessagef("Hello")                                               // 5
     printMessageWithPrefixf("Hello", "Log")                              // 6
@@ -80,3 +80,5 @@ fun range1(num: Int): String {
 fun range2(): Boolean {
     return (1 in 3 downTo 1)
 }
+
+ */

@@ -52,7 +52,7 @@ fun findMax(n1: Int, n2: Int, absolute: Boolean = false): Int {
 	return if (v1 > v2) n1 else n2
 }
 
-fun main() {
+fun max() {
 	println(findMax(11, 15)) // 15
 	println(findMax(11, 15, true)) // 15
 	println(findMax(-4, -9)) // -4
@@ -84,7 +84,7 @@ fun getVolume(length: Int, width: Int = 1, height: Int = 1): Int {
 	return length * width * height
 }
 
-fun checkSpeed(speed: Int, limit : Int = 60) {
+fun checkSpeed1(speed: Int, limit : Int = 60) {
 	if (speed > limit) {
 		var n = speed - limit
 		println("Exceeds the limit by $n kilometers per hour")

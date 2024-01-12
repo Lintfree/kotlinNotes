@@ -17,8 +17,10 @@ fun main() {
 
 	//If you need to exclude the right border,
 	// you may subtract 1 from it or use ..< to get the open-ended range (the recommended way).
+	val a = 10
+	val b = 20
+	val c = 15
 	val withinExclRight = c in a..<b // a <= c && c < b (the recommended way)
-
 
 	//If you need to check that a value is not within a range, just add ! (not) before in.
 	val notWithin = 100 !in 10..99 // true
@@ -40,11 +42,11 @@ fun main() {
 	println("abc" in "aab".."aac") // false
 
 	//fun main() { ranges expressed when entered by user
-		val a = readln().toInt()..readln().toInt()
-		val b = readln().toInt()..readln().toInt()
-		val c = readln().toInt()
+		val a1 = readln().toInt()..readln().toInt()
+		val b1 = readln().toInt()..readln().toInt()
+		val c1 = readln().toInt()
 
-		print(c in a && c in b)
+		print(c1 in a1 && c1 in b1)
 
 	fun checkNumberRange(number: Int): String {
 		val range = 1..10

@@ -1,4 +1,4 @@
-/* Objects and their propperties
+/* Objects and their properties
 	Every time when you work with variables, you work with objects.
 	For example, an integer 5 and a string "love" are objects.
 
