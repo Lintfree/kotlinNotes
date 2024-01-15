@@ -1,3 +1,5 @@
+import java.io.IOException
+
 /*
 There are different strategies to find runtime errors: (not logic errors or unhandled exceptions ie: divide by zero)
 1. debug your program;
@@ -373,6 +375,40 @@ fun main() {
 			throw Exception("It's too big")
 		} else {
 			return (value)
+		}
+	}
+
+	/*
+	from hyperskill practice  correct answer:
+    There is a function suspiciousFunction, and for some reason, you suspect that an exception might occur in it.
+	Process the call of suspiciousFunction with the help of the try-catch-finally statement. If an exception occurs in the function, print the exception message.
+	In the case of IOException, print the following message instead: The IOException occurred.
+	In the final block, output Handling completed successfully!.
+	*/
+
+	//import java.io.IOException
+	//import java.lang.ArithmeticException
+
+	fun suspiciousFunction (param: Int) {
+		when (param) {
+			0 -> throw Exception("Some exceptions?")
+			1 -> throw java.lang.ArithmeticException("Division by zero")
+			2 -> throw Exception("An exception occurred here")
+			3 -> throw IOException()
+		}
+	}
+
+	fun handleException (data: Int) {
+		val exception = try {
+			suspiciousFunction(data)
+		} catch (e: IOException) {
+			println("The IOException occurred")
+		} catch (e: java.lang.ArithmeticException) {
+			println(e.message)
+		} catch (e: Exception) {
+			println(e.message)
+		} finally {
+			println("Handling completed successfully!")
 		}
 	}
 }

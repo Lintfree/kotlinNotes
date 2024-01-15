@@ -84,7 +84,7 @@ fun main() {
 // better than above
 
 
-fun main(args: Array<String>) {
+/*fun main(args: Array<String>) {
 	val scanner = Scanner(System.`in`)
 	// put your code here
 	val n = scanner.nextInt()
@@ -100,6 +100,37 @@ fun main(args: Array<String>) {
 	}
 	print("$d $c $b $a")
 }
+ */
+
+/*Write a program that reads four characters and prints the previous character in the Unicode table
+for each of them.
+
+Sample Input 1:
+
+b
+c
+d
+e
+Sample Output 1:
+
+a
+b
+c
+d
+*/
+
+fun main(): Unit {
+		val scanner = Scanner(System.`in`)
+		var w: Char = scanner.next().first()
+		var x: Char = scanner.next().first()
+		var y: Char = scanner.next().first()
+		var z: Char = scanner.next().first()
+		 println(-- w)
+		 println(-- x)
+		 println(-- y)
+		 println(-- z)
+}
+
 
 
 

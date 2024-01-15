@@ -827,4 +827,14 @@ the function returns a sum of x and y when called.
     This was the answer
     fun include(arr: IntArray, item: Int) = item in arr
     */
+
+    /*
+    val age: Int = 42  // this is correct for integer type not a String type
+    Int age = 42  // invalid Kotlin syntax
+    val age = “42”: String  // invalid syntax, colon, and type should come right after the value name
+    String age = “42”  // valid in Java but not in Kotlin
+    var age = 42  // var is used here not val, and age is of type Int, not a String
+    val age: String = “42”  // correct syntax, although not mandatory we can explicitly declare the type
+    val age: Char = ‘42’  // '42' is not Char type, in fact, it is not a valid type Kotlin knows about
+     */
 }
