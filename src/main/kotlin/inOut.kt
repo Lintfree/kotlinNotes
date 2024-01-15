@@ -26,30 +26,13 @@ fun main() {
 /*
 Explanation:
 
-Variable Initialization: We first define a variable
-Copy code
-name
-of type
-String
-to store the user input.
-Prompting for Input: We use the
-Copy code
-print
-function to display a message asking the user for their name.
-Reading Input: We use the
-Copy code
-readLine
-function to read the user's input from the keyboard. The
-?: ""
-operator assigns an empty string to the variable if the user doesn't enter anything.
-Validating Input: We check if the user entered a name using the
-Copy code
-isNotEmpty
-function.
-Changing Variable: If the user entered a name, we trim any leading or trailing spaces using the
-Copy code
-trim
-function and then use it to greet the user.
+Variable Initialization: We first define a variable name of type String to store the user input.
+Prompting for Input: We use the print function to display a message asking the user for their name.
+Reading Input: We use the readln function to read the user's input from the keyboard.
+The elvis operator ?: "" is a null-safe operator assigns an empty string to the variable if the user doesn't enter anything.
+Validating Input: We check if the user entered a name using the isNotEmpty function.
+Changing Variable: If the user entered a name, we trim any leading or trailing spaces using the trim function and then use it to greet the user.
+
 Error Handling: If the user entered an empty string, we display an error message.
 
 This is a simple example of how to read user input and change a variable in Kotlin.
