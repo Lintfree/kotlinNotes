@@ -119,8 +119,8 @@ c
 d
 */
 
-fun main(): Unit {
-		val scanner = Scanner(System.`in`)
+//fun main(): Unit {
+/*		val scanner = Scanner(System.`in`)
 		var w: Char = scanner.next().first()
 		var x: Char = scanner.next().first()
 		var y: Char = scanner.next().first()
@@ -130,7 +130,7 @@ fun main(): Unit {
 		 println(-- y)
 		 println(-- z)
 }
-
+*/
 
 
 
@@ -152,11 +152,39 @@ Zaphod	One for Zaphod, one for me.
  */
 
 fun twofer(name: String): String {
-
 	return if (name != "") {
 		"One for $name, one for me."
 	} else {
 		"One for you, one for me."
 	}
 
+}
+
+//fun main() {
+	//val name = readln()
+	//println(twofer(name))
+//}
+
+
+/*
+Write a program that reads the first name, the last name and the age of a person and then prints the information as in the examples below.
+
+To solve this problem, use string templates.
+
+Sample Input 1:
+
+John Smith 30
+Sample Output 1:
+
+J. Smith, 30 years old
+Sample Input 2:
+
+Reece Weber 20
+Sample Output 2:
+
+R. Weber, 20 years old
+ */
+fun main() {
+	val (firstName, lastName, age) = readln().split(" ")
+	println("${firstName.first()}. $lastName, $age years old")
 }
