@@ -171,4 +171,67 @@ fun main() {
     val number = readln().toInt()
     val inRange = number >= left && number <= right // joining two expressions using AND
      */
+
+
+    /*
+    Double can represent a wider number range than Float.
+    Double  range is 4.9E-324 to 1.7976931348623157E308;
+    Float range is 1.4E-45 to 3.4028235E38.
+    You can use the .toDouble() function to convert a Float into a Double.
+    In practice, programmers mostly use the Double type.
+    Double is the default type for numeric values in Kotlin.
+    You can also use it to represent non-numeric values, such as the pi constant:
+    val pi = 3.1415
+    val squaredPi = pi * pi
+
+    For fractional operands, the operator / performs division with a remainder, not integer division.
+    println(squaredPi / 2) // prints 4.934511125
+
+    Errors during computation
+    Be careful — operations with floating-point numbers can produce an inaccurate result:
+
+    You can use readln() to read Doubles and Floats from the standard input:
+    val f = readln().toFloat()  // Float
+    val d = readln().toDouble() // Double
+
+     a program that calculates a triangle area. To find it, the program reads the base and the height from the standard input, then multiplies them and divides the result by 2. Note that the base and the height are perpendicular to each other.
+
+    fun main() {
+        val base = readln().toDouble()
+        val height = readln().toDouble()
+
+        val area = (base * height) / 2
+
+        println(area)
+    }
+
+    Decimal separator
+    It is crucial to use the correct decimal separator.
+    The separator is locale-dependent, such as a dot for the US locale.
+    If you happen to employ any other character, it may crash your program.
+    If you work with another locale and want to use the dot character, you can use this construction:
+
+    import java.util.Locale
+
+    val floatNum = readln().format(Locale.US).toFloat()
+
+
+    fun main() {
+        val miles = readLine()!!.toDouble()
+        val time = readLine()!!.toDouble()
+
+        println(miles / time)
+    }
+
+
+    import kotlin.math.pow
+
+    fun main() {
+	    val x = readln().toDouble()
+
+	    println(x.pow(3.0) + x.pow(2.0) + x + 1.0)
+    }
+     */
+
+
 }

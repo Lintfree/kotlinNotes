@@ -184,7 +184,24 @@ Sample Output 2:
 
 R. Weber, 20 years old
  */
+
+/*
 fun main() {
 	val (firstName, lastName, age) = readln().split(" ")
 	println("${firstName.first()}. $lastName, $age years old")
+*/
+
+	//fun main() {
+		//val string = readln()
+		//val number = readln().toInt()
+
+		//println("Symbol # $number of the string \"$string\" is '${string[number - 1]}'")
+	//}
+
+	fun main() {
+		val firstName = readln()!!
+		val lastName = readln()!!
+
+		println(firstName.first() + ". " + lastName)
+
 }
