@@ -160,10 +160,11 @@ fun twofer(name: String): String {
 
 }
 
-//fun main() {
-	//val name = readln()
-	//println(twofer(name))
-//}
+fun main (){
+	val name = readln()
+	val cookie = twofer(name)
+	println(cookie)
+}
 
 
 /*
@@ -198,10 +199,13 @@ fun main() {
 		//println("Symbol # $number of the string \"$string\" is '${string[number - 1]}'")
 	//}
 
+/*
 	fun main() {
 		val firstName = readln()!!
 		val lastName = readln()!!
 
 		println(firstName.first() + ". " + lastName)
+*/
 
-}
+
+
