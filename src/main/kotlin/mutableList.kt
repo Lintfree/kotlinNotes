@@ -87,7 +87,7 @@ fun main() {
 
 	val words = ("first", "second", "third")
 	val isListContainsThirdWord = words.contains("third")
-	val listSize = words.size
+	val listSize = words.size // 3
 
 	words.add ("fourth")
 	println("List contains 'third': $isListContainsThirdWord")
@@ -95,8 +95,309 @@ fun main() {
 	println("List size after adding a new word: ${words.size}")
 
 	val list = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-	val n = 6
-	val elem = list[list[n]] //find n first [] then take that num and then find that num in the list = 8
+	val n = 6 // 6th element
+	val elem = list[list[n]] //find n first [] then take that num and then find that num in the list = 6
 }
 
+	Outputting a list
+	The first function is joinToString(). It helps us output our list in different ways using the separator attribute.
+
+	Use joinToString() to see the resulting list and print its contents:
+
+	val southernCross = mutableListOf("Acrux", "Gacrux", "Imai", "Mimosa")
+	println(southernCross.joinToString())   //  Acrux, Gacrux, Imai, Mimosa
+
+	Remember that joinToString() takes elements from a mutable list in the order in which they are stored
+	and presents them as a comma-delimited string line.
+
+	You can also use another delimiter to separate elements :
+
+	println(southernCross.joinToString(" -> "))   //  A
+
+	Working with multiple lists
+	Now, let’s look at a couple of things you might want to know about when working with several string lists.
+
+	Mutable lists can be joined.
+
+	You can concatenate several lists as shown in the following example:
+
+	val southernCross = mutableListOf("Acrux", "Gacrux", "Imai", "Mimosa")
+	val stars = mutableListOf("Ginan", "Mu Crucis")
+
+	val newList = southernCross + stars
+	println(newList.joinToString())    //  Acrux, Gacrux, Imai, Mimosa, Ginan, Mu Crucis
+
+	Mutable lists can be compared.
+
+	You can use the operators == and != to compare lists – their contents and sizes:
+
+	val firstList = mutableListOf("result", "is", "true")
+	val secondList = mutableListOf("result", "is", "true")
+	val thirdList = mutableListOf("result")
+
+	println(firstList == secondList)  //  true
+	println(firstList == thirdList)   //  false
+	println(secondList != thirdList)  //  true
+	Note that true is returned only if the elements of the two lists match completely and are arranged in the same order.
+
+	Changing the list contents
+	The keywords val and var tell you how the value/reference of a variable should be handled.
+
+	var – the value/reference assigned to a variable can be changed at any time.
+	val – the value/reference can be assigned to a variable only once and cannot be changed later during the execution.
+
+	No matter which keyword you're using, val or var, you can still edit the values of the existing elements through their index. This is possible because when we change the contents of a list, we do not create a new list (the link to the list is not changed):
+
+	val southernCross = mutableListOf("Acrux", "Gacrux", "Imai", "Mimosa")
+	var stars = mutableListOf("Ginan", "Mu Crucis")
+	southernCross[1] = "star"
+	stars[1] = "star"
+
+	println(southernCross[1]) // star
+	println(stars[1]) // star
+	There are ways to remove list elements and add new elements to the list.
+
+	You can use the functions add, remove, and clear to change lists:
+
+	val southernCross = mutableListOf("Acrux", "Gacrux", "Imai", "Mimosa")
+	val stars = mutableListOf("Ginan", "Mu Crucis")
+	val names = mutableListOf("Jack", "John", "Katie")
+	val food = mutableListOf("Bread", "Cheese", "Meat")
+	val fruits = mutableListOf("Apple", "Banana", "Grape", "Mango")
+
+	southernCross.removeAt(0)
+	southernCross.remove("Mimosa")
+
+	stars.add("New star")
+	stars.add(0, "First star")// add new items at any position in the list
+
+	names.clear() // deletes all elements from the list
+
+	food.addAll(fruits)
+
+	println(names) // []
+	println(southernCross.joinToString()) // Gacrux, Imai
+	println(stars.joinToString()) // First star, Ginan, Mu Crucis, New star
+	println(food.joinToString()) // Bread, Cheese, Meat, Apple, Banana, Grape, Mango
+
+	add(element) and add(index, element) insert new items at any position in the list.
+	If you don't specify the index, the item will be added to the end of the list.
+
+	list1.addAll(list2) adds all elements from list2 to the end of the list1.
+
+	remove(element) and removeAt(index) delete an item from the list.
+	The former function deletes a single instance of the specified element from the list
+	(it returns true if the item was successfully removed, otherwise it returns false).
+	The latter function deletes the element at the specified position and returns the element that has been removed.
+
+	clear() deletes all elements from the list.
+
+	Also, you can use += to add new elements to the list:
+
+	val vowels = mutableListOf('a', 'o', 'i', 'e', 'u')
+	val intList1 = mutableListOf(1, 2, 3, 4, 5)
+	val intList2 = mutableListOf(5, 4, 3, 2, 1)
+
+	vowels += 'y'
+	intList1 += intList2
+
+	println(vowels)   // [a, o, i, e, u, y]
+	println(intList1) // [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]
+
+	Copy list content
+	Kotlin doesn't have any functions to copy existing lists. However, you can do it using the toMutableList() function:
+
+	val list = mutableListOf(1, 2, 3, 4, 5)
+	val copyList = list.toMutableList()
+
+	print(copyList) // [1, 2, 3, 4, 5]
+
+	This function creates a new MutableList and adds the contents of list to the new list. It works like this:
+
+	val list = mutableListOf(1, 2, 3, 4, 5)
+	val copyList = mutableListOf<Int>()
+	copyList.addAll(list)
+
+	print(copyList) // [1, 2, 3, 4, 5]
+
+	There are some operations that can be really useful when you work with lists and their contents:
+
+	list.isEmpty() and list.isNotEmpty() – check whether the list is empty.
+
+	list.subList(from, to) – creates a smaller list (sublist),
+	which includes items of the original list with the following indexes: from, from + 1, ..., to - 2, to - 1.
+	The element with the index to is not included.
+
+	val numbers = mutableListOf(1, 2, 3, 4, 5)
+	var sublist = mutableListOf<Int>()
+	if (numbers.isNotEmpty() && numbers.size >= 4) {
+     sublist = numbers.subList(1, 4)
+	}
+
+	print(sublist) // [2, 3, 4]
+
+	list.indexOf(element) – searches for the index of an element in the list.
+	The result of this function is -1 if there is no such element in the list.
+	Otherwise, when we access the list by the calculated index, we get the element.
+
+	val numbers = mutableListOf(1, 2, 3, 4, 5)
+
+	if (5 in numbers) { // true
+    println(numbers.indexOf(5)) // 4
+	}
+
+	print(numbers.indexOf(7)) // -1  // 7 is not in the list
+	list.minOrNull() and list.maxOrNull() – search for the minimum and maximum elements in the list.
+
+	list.sum() – returns the sum of the elements in the list.
+
+	list.sorted() and list.sortedDescending() – build a sorted list (ascending or descending) from the available list.
+
+	val numbers = mutableListOf(1, 2, 3, 4, 5)
+
+	val vowels = mutableListOf('e', 'a', 'y', 'i', 'u', 'o')
+
+	println(numbers.minOrNull()) // 1
+	println(numbers.maxOrNull()) // 5
+	println(numbers.sum())      // 15
+
+	println(vowels.sorted()) // [a, e, i, o, u, y]
+	println(vowels.sortedDescending()) // [y, u, o, i, e, a]
+
+	Iterating through a MutableList
+	The simplest way to process each mutable list element is to use the following template:
+
+	for (element in mutList) {
+    // body of loop
+	}
+	Suppose we have a mutable list that includes weekdays. Let's print each day of the week:
+
+	fun main() {
+        val daysOfWeek = mutableListOf("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat")
+
+        for (day in daysOfWeek){
+        println(day)
+        }
+	}
+	After that, the program will print the following:
+
+	Sun
+	Mon
+	Tues
+	Wed
+	Thur
+	Fri
+	Sat
+	In the same way, you can process a mutable list of integers, characters, or any other data type.
+
+	Iterating by indexes
+	It is possible to access elements by their index directly from the loop.
+	To do that, you must use the mutList.indices property, which represents a range of valid mutList indexes.
+
+	Take a look at the daysOfWeek mutable list:
+
+	fun main() {
+        val daysOfWeek = mutableListOf("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat")
+
+        for (index in daysOfWeek.indices){
+            println("$index: ${daysOfWeek[index]}")
+        }
+	}
+	The program will print the following:
+
+	0: Sun
+	1: Mon
+	2: Tues
+	3: Wed
+	4: Thur
+	5: Fri
+	6: Sat
+
+	We can also iterate through the list in reverse order:
+	Iterating by range indexes
+	We have discussed two ways of iterating through a mutable list.
+	They are useful when you need to process each list element.
+	Sometimes, however, you may need to access a particular sublist.
+	In such a case, you can specify the range of the indexes you need.
+
+	The first element of a mutable list always has index 0.
+
+	Take a look at the program below:
+
+	fun main() {
+        val daysOfWeek = mutableListOf("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat")
+
+        for (index in 1..5) {
+            println("$index: ${daysOfWeek[index]}")
+        }
+	}
+	It will print only the workdays:
+
+	1: Mon
+	2: Tues
+	3: Wed
+	4: Thur
+	5: Fri
+
+	To use the last index of a mutable list in ranges, you need to access mutList.lastIndex. So, we can modify the code this way:
+
+	for (index in 1 until daysOfWeek.lastIndex) {
+        println("$index: ${daysOfWeek[index]}")
+	}
+	It displays the same days as before:
+
+	1: Mon
+	2: Tues
+	3: Wed
+	4: Thur
+	5: Fri
+
+	If you want to iterate through a mutable list in reverse order, use downTo in a range.
+	You can also specify the offset between indexes using step.
+
+	The program below will print days in reverse order with a step of 2:
+
+	fun main() {
+        val daysOfWeek = mutableListOf("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat")
+
+        for (index in daysOfWeek.lastIndex downTo 0 step 2) {
+            println("$index: ${daysOfWeek[index]}")
+        }
+	}
+	Output:
+
+	6: Sat
+	4: Thur
+	2: Tues
+	0: Sun
+	So, you can iterate through an entire mutable list or a part of it in both direct and reverse order with any step you need.
+
+	Reading MutableList elements
+	Some tasks require you to read mutable list elements from the input.
+
+	For example, the program below reads integer numbers and prints them in reverse order.
+
+	fun main() {
+        val size = readln().toInt()
+        val mutList: MutableList<Int> = mutableListOf()
+        for (i in 0 until size) {
+            mutList.add(readln().toInt())
+        }
+
+        for (i in mutList.lastIndex downTo 0) {
+            print("${mutList[i]} ")
+        }
+	}
+	Here is the input:
+
+	5
+	1
+	2
+	3
+	4
+	5
+	The program will output the following:
+
+	5 4 3 2 1
+	You can use this program as a template for your own solutions.Working with multiple lists
  */

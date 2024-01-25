@@ -40,8 +40,7 @@ Example from Bounty board.
     hinders readability.
 
     trimIndent does not use the pipe character and will find a common amount of whitespace of the strings and remove it.a
-
-
-
-
  */
+
+// does not need a return statement
+fun makeUpperCase(str: String) = str.uppercase()

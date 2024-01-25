@@ -160,12 +160,12 @@ fun twofer(name: String): String {
 
 }
 
-fun main (){
+/*fun main (){
 	val name = readln()
 	val cookie = twofer(name)
 	println(cookie)
 }
-
+*/
 
 /*
 Write a program that reads the first name, the last name and the age of a person and then prints the information as in the examples below.
@@ -207,5 +207,68 @@ fun main() {
 		println(firstName.first() + ". " + lastName)
 */
 
+/*Check the order
+Write a program that checks if N numbers are sorted according to the ascending order (from the smallest number to the largest one).
 
 
+The first line contains the number N.
+The other lines contain N numbers.
+
+Output "YES" if N numbers are sorted in ascending order, otherwise, output "NO".
+*/
+/*
+fun main() {
+	val size : Int = readln()!!.toInt()
+	val list = mutableListOf <Int>()
+
+	for (i in 1..size) {
+		list.add (readln().toInt())
+	}
+	val sortedList = list.sorted()
+	if (sortedList == list) {
+		println("YES")
+	}else {
+		println("NO")
+	}
+}
+*/
+
+/*same as above
+fun main() {
+	val n = readln().toInt()
+	val nums = List(n) { readln().toInt() }
+	if (nums == nums.sorted()) println("YES") else println("NO")
+}
+*/
+
+/*
+fun main() {
+	val pi = 3.1415
+	val radius = readln().toInt()
+	val area = pi * (radius * radius)
+	println(area)
+}
+*/
+
+/*
+imagine a bakery that has a holiday offer where you can buy two cookies for the price of one ("two-fer one!"). You go for the offer and (very generously) decide to give the extra cookie to a friend.
+
+Instructions
+Your task is to determine what you will say as you give away the extra cookie.
+
+If your friend likes cookies, and is named Do-yun, then you will say:
+
+One for Do-yun, one for me.
+If your friend doesn't like cookies, you give the cookie to the next person in line at the bakery. Since you don't know their name, you will say you instead.
+
+One for you, one for me.
+ */
+
+fun main() {
+	val name = readln()
+	if (name != "") {
+		println("One for $name, one for me.")
+	} else {
+		println("One for you, one for me.")
+	}
+}
