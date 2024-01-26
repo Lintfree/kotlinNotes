@@ -1,7 +1,7 @@
 
-fun prt (a: Int, b: Int, c: Int, d: Int): Int {
-    return (a + b + c + d)
-}
+//fun prt (a: Int, b: Int, c: Int, d: Int): Int {
+    //return (a + b + c + d)
+//}
 
 
 
@@ -85,6 +85,7 @@ Sample Output
 
 */
 
+/*
 fun main() {
     val n = readln().toInt()
     val originalList = MutableList(n) { readln().toInt() }
@@ -99,4 +100,94 @@ fun main() {
         originalList.add(0, lastElement)
     }
     println(originalList.joinToString(" "))
+}
+ */
+
+/*Write a program that counts the times a number M occurs in N numbers.
+
+The first line contains the N number.
+The next N lines contain the numbers.
+The last line contains the M number.
+
+Output only a single non-negative integer number.
+
+Sample Input 1:
+5
+1
+2
+3
+4
+5
+4
+Sample Output 1:
+2
+ */
+
+/*
+fun main() {
+    val n = readln().toInt()
+    val list = MutableList(n) { readln().toInt() }
+    val m = readln().toInt()
+    var count = 0
+    for (i in list) {
+        if (i == m) {
+            count++
+        }
+    }
+    println(count)
+}
+ */
+
+/*
+You are given a list of positive integers.
+Your task is to create a program that loops over the list and checks each number.
+If the number is odd, multiply it by 2, if it's even, divide it by 2.
+Print the transformed list as output. The input will be a string representation of a list of comma-separated integers,
+and the output should be a string representation of the transformed list of comma-separated integers.
+ */
+
+/*fun main() {
+    val list = readln().split(",").map { it.toInt() }
+    //Returns a list containing the results of applying the given transform function
+    // in this case the , is the delimiter/separator transform function
+    // to each element in the original collection.
+    val newList = mutableListOf<Int>()
+    for (i in list) {
+        if (i % 2 == 0) {
+            newList.add(i / 2)
+        } else {
+            newList.add(i * 2)
+        }
+    }
+    println(newList.joinToString(","))
+}
+*/
+
+import java.util.*
+
+fun transformList(numbersString: String): String {
+    // Converting the String of comma-separated integers to a MutableList of Integers.
+    val numbers = numbersString.split(",").map { it.toInt() }.toMutableList()
+
+    // Put your code here to loop over the list and transform the numbers according to the given constraints.
+
+    for (i in numbers.indices) {
+        if (numbers[i] % 2 == 0) numbers[i] = numbers[i] / 2 else {
+            numbers[i] = numbers[i] * 2
+        }
+    }
+    // After transforming the list, convert it back to a String and return.
+    return numbers.joinToString(",")
+}
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+
+    // The input will be read as a String, and you will need to parse it to a MutableList of Integers.
+    val numbersString = scanner.nextLine()
+
+    val transformedListString = transformList(numbersString)
+
+    // Print the transformed list as a string.
+    println(transformedListString)
 }
