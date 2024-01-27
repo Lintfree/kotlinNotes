@@ -25,10 +25,13 @@ For example, you may have a collection of favourite restaurants that can change 
 Kotlin Standard Library provides the implementation for the basic types of collections: list, set, and map.
 All three exist in mutable and immutable variations. Before we consider each type in detail, let's have a quick overview.
 List stores elements in a specified order and provides indexed access to them.
+List is an immutable collection.
+Its size cannot be changed after it is initialized.
+This type allows duplicates and stores elements in a specific order.
+List is a container that keeps the elements of a given type in the same order in which they were added.
 Set stores unique elements whose order is generally undefined.
 Map stores key-value pairs (entries); keys are unique, but different keys can be paired with equal values.
-List is a container that keeps the elements of a given type in the same order in which they were added.
-Also, List allows duplicate elements.
+
 So, if you want to store items in the order of their insertion, and it doesn't matter to you that they can be repeated,
 use List. For example, you could store student rating history in a List.
 
@@ -64,7 +67,8 @@ joinToString() converts the collection to a string.
 
 indexOf(element) returns the index of the first entry of the element, or -1 if the element is not in the collection.
 
-In addition, all mutable collections have some common methods. You can use them with any mutable collection, but they cannot be used with an immutable collection:
+In addition, all mutable collections have some common methods. You can use them with any mutable collection,
+but they cannot be used with an immutable collection:
 
 clear() removes all elements from the collection.
 
@@ -104,31 +108,3 @@ As you can see, the in keyword makes code easier to read.
 You should use in instead of contains(), as it is recommended in the documentation on kotlinlang.org.
  */
 
-//Given a string of numbers separated by commas, create a MutableList out of these numbers and find the third smallest element.
-// Assume that the input string always has at least three distinct numbers. Return the third smallest number.
-
-import java.util.*
-
-fun thirdSmallest(numbers: String): Int {
-	// Step 1: Initialize MutableList and populate it
-	var numberList: MutableList<Int>
-	// Your code goes here
-	numberList = numbers.split(",").map { it.toInt() }.toMutableList()
-
-	// Step 2: Sort the MutableList
-	// Your code goes here
-	numberList.sort()
-
-	// Step 3: Return the third smallest number
-	val thirdElement = numberList.elementAt(3)
-
-	return thirdElement
-}
-
-fun main(args: Array<String>) {
-	// Get input string from user
-	val input = readln() !!
-
-	// Call the thirdSmallest method and print the output
-	println(thirdSmallest(input))
-}

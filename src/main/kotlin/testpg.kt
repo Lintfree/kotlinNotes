@@ -1,4 +1,5 @@
 
+
 //fun prt (a: Int, b: Int, c: Int, d: Int): Int {
     //return (a + b + c + d)
 //}
@@ -163,6 +164,7 @@ and the output should be a string representation of the transformed list of comm
 }
 */
 
+/*
 import java.util.*
 
 fun transformList(numbersString: String): String {
@@ -191,3 +193,100 @@ fun main(args: Array<String>) {
     // Print the transformed list as a string.
     println(transformedListString)
 }
+
+//Given a string of numbers separated by commas, create a MutableList out of these numbers and find the third smallest element.
+// Assume that the input string always has at least three distinct numbers. Return the third smallest number.
+
+import java.util.*
+
+fun thirdSmallest(numbers: String): Int {
+    // Step 1: Initialize MutableList and populate it
+    var numberList: MutableList<Int>
+    // Your code goes here
+    numberList = numbers.split(",").map { it.toInt() }.toMutableList()
+
+    // Step 2: Sort the MutableList
+    // Your code goes here
+    numberList.sort()
+
+    // Step 3: Return the third smallest number
+    val thirdElement = numberList.elementAt(3)
+
+    return thirdElement
+}
+
+fun main(args: Array<String>) {
+    // Get input string from user
+    val input = readln()
+
+    // Call the thirdSmallest method and print the output
+    println(thirdSmallest(input))
+}
+ */
+
+//You are given a List of integers.
+// Iterate through the given List and print in a single line the elements that are divisible by 2.
+
+//Sample Input 1:
+
+//8 11 13 2
+//Sample Output 1:
+
+//8 2
+
+/*
+fun solution(numbers: List<Int>) {
+    for (i in numbers) {
+        if (i % 2 == 0) {
+            print("$i ")
+        }
+    }
+
+}
+
+fun main() {
+    val numbers = readln().split(" ").map { it.toInt() }
+    solution(numbers)
+}
+ */
+
+/*
+fun solution(strings: List<String>, str: String): Int {
+    for (i in strings) {
+        if (i == str) {
+            return strings.count { it == str }
+        }
+    }
+    return 0
+}
+
+fun main() {
+    val strings = readln().split(" ")
+    val str = readln()
+    println(solution(strings, str))
+}
+*/
+
+/*
+In the input, you are given a List of products that you put on the shelf and a String that represents a specific product.
+Print out this product's position on the shelf. Note that products may repeat.
+ */
+
+fun solution(products: List<String>, product: String) {
+        for (i in products.indices) {
+            for (j in products.indices) {
+                if (products[j] == product) {
+                    print("$j ")
+                }
+            }
+            return
+        }
+
+    }
+
+fun main() {
+    val products = readln().split(" ")
+    val product = readln()
+    solution(products, product)
+}
+
