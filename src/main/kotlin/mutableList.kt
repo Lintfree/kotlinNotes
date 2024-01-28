@@ -146,7 +146,8 @@ fun main() {
 	var – the value/reference assigned to a variable can be changed at any time.
 	val – the value/reference can be assigned to a variable only once and cannot be changed later during the execution.
 
-	No matter which keyword you're using, val or var, you can still edit the values of the existing elements through their index. This is possible because when we change the contents of a list, we do not create a new list (the link to the list is not changed):
+	No matter which keyword you're using, val or var, you can still edit the values of the existing elements through their index.
+	This is possible because when we change the contents of a list, we do not create a new list (the link to the list is not changed):
 
 	val southernCross = mutableListOf("Acrux", "Gacrux", "Imai", "Mimosa")
 	var stars = mutableListOf("Ginan", "Mu Crucis")
@@ -400,4 +401,123 @@ fun main() {
 
 	5 4 3 2 1
 	You can use this program as a template for your own solutions.Working with multiple lists
+
+	Let's recap: List is a collection. List has a lot of methods and properties out-of-the-box.
+	You cannot make changes to the elements of a List because it is immutable. Now we will learn about its mutable twin brother.
+
+	MutableList is another version of List.
+	It allows duplicates and stores elements in a specific order.
+	In contrast to List, MutableList is a mutable or modifiable collection that allows you to add and remove elements.
+
+	Imagine you decided to keep a List of all the places you've been to:
+
+	val places = listOf<String>("Paris", "Moscow", "Tokyo")
+	println(places) // output: [Paris, Moscow, Tokyo]
+	You keep travelling, and your most recent trip was to Saint Petersburg.
+	You want to add it to your List of places, but there is a problem:
+	you cannot add another item to the List because it is immutable. Y
+	ou can do this by reassigning, but this is a slow and inefficient way:
+
+	var places = listOf<String>("Paris", "Moscow", "Tokyo") // note var keyword
+	places += "Saint-Petersburg" // reassignment, slow operation
+	println(places) // output: [Paris, Moscow, Tokyo, Saint-Petersburg]
+	This is where MutableList comes to our rescue.
+	As we said before, MutableList supports adding elements. So, let's switch to MutableList and add one more element:
+
+	val places = mutableListOf<String>("Paris", "Moscow", "Tokyo")
+	places.add("Saint-Petersburg")
+	println(places) // output: [Paris, Moscow, Tokyo, Saint-Petersburg
+
+	Initializing
+	Here is how you can initialize MutableList:
+
+	val cars = mutableListOf("Ford", "Toyota", "Audi", "Mazda", "Tesla")
+	println(cars) // output: [Ford, Toyota, Audi, Mazda, Tesla]
+	That is it! Here, we didn't even need to specify the type for our objects because it can be derived from the context.
+	However, note that if you create an empty MutableList, you do have to specify the type:
+
+	val cars = mutableListOf<String>()
+	println(cars) // output: []
+	You can also transform List into a MutableList with the help of the function toMutableList():
+
+	val cars = listOf("Ford", "Toyota").toMutableList()
+	cars.add("Tesla")
+	println(cars) // output: [Ford, Toyota, Tesla]
+
+	Adding and replacing elements
+	MutableList has the same properties and methods as List:
+	size, get(index), isEmpty(), indexOf(element), contains(element), and so on.
+
+	Since MutableList is special because it can be modified, it has additional functionality for changing the contents:
+
+	add(element) is a method that adds an extra element to your list.
+
+	set(index, element) replaces the element at the specified position with the specified element. Laconic form:
+	mutableList[index] = element
+
+	addAll(elements) adds all of the elements of the specified collection to the end of the list.
+
+	Let's take a look at some examples. Imagine that you're about to go get groceries, so you're making a List of products you need:
+
+	val products = listOf("Milk", "Cheese", "Coke")
+	You had a change of heart: suddenly, you decided that you also need to get some chips, and maybe get water instead of milk.
+	Let's update our list of products:
+
+	val finalList = products.toMutableList()
+	finalList.add("Chips")
+	finalList[0] = "Water" // or finalList.set(0, "Water")
+	println(finalList) // output: [Water, Cheese, Coke, Chips]
+	Then, let's say your dad came in and gave you his grocery list. Okay, let's add these products to our list as well:
+
+	val products = mutableListOf("Milk", "Cheese", "Coke")
+	val dadsProducts = listOf("Banana", "Watermelon", "Apple")
+	products.addAll(dadsProducts)
+
+	println(products) // output: [Milk, Cheese, Coke, Banana, Watermelon, Apple]
+
+	Removing elements
+	You might also need to remove some or all elements from your list. Let's see how this can be done:
+
+	removeAt(index) removes an element at a specified index.
+
+	remove(element) remove the specified element.
+
+	clear() removes all elements from the current collection.
+
+	Let's go back to our grocery list.
+	As you were getting dressed, you gradually realized that you actually had all this food in your fridge. One by one,
+	you decided to clear your list of these products:
+
+	val products = mutableListOf("Milk", "Cheese", "Coke")
+
+	products.removeAt(0)
+	println(products) // output: [Cheese, Coke]
+
+	products.remove("Coke")
+	println(products) // output: [Cheese]
+
+	products.clear()
+	println(products) // output: []
+	This is not an exhaustive list of methods you can use. To learn about other MutableList methods, check out kotlinlang.org.
+
+	Iterating through elements
+	You can iterate through the elements in MutableList with the help of the for loop. Here is an example:
+
+	val products = mutableListOf("Cheese", "Milk", "Coke")
+
+	for (product in products) {
+    println("$product")
+	}
+
+	// Cheese
+	// Milk
+	// Coke
+	We iterated through our MutableList and printed the name of each product.
+
+	fun solution(first: List<Int>, second: List<Int>): MutableList<Int> {
+	val result = mutableListOf<Int>()
+	result.addAll(first)
+	result.addAll(second)
+	return result
+}
  */
