@@ -284,6 +284,7 @@ fun solution(products: List<String>, product: String) {
 
     }
 
+/*
 fun main() {
     val products = readln().split(" ")
     val product = readln()
@@ -292,7 +293,7 @@ fun main() {
 
 //Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
 // Your function only needs to return the result,
-/*
+
 fun summation(n:Int):Int {
     var sum = 0
     for (i in 1..n) {
@@ -301,4 +302,78 @@ fun summation(n:Int):Int {
     return sum
 }
 */
-fun summation(n: Int) = (1..n).sum()
+
+/*The second of T
+Iterate through every second element of a list in a loop and find the index of the first word that starts with T.
+It is guaranteed that at least one word with an odd index starts with T.
+
+Sample Input 1:
+Test Kora Terra Tetta Garry
+Sample Output 1:
+3
+*/
+
+/*
+fun solution(names: List<String>): Int {
+    for ((i, j) in names.withIndex()) {
+        if (i % 2 != 0 && j.first() == 'T') {
+            return i
+        }
+    }
+    return -1
+}
+
+fun main() {
+    println(solution(readln().split(" ")))
+}
+
+ */
+/*
+The first position of the largest element
+Write a program that reads a sequence of numbers of undefined size and prints the largest number and the position of its first occurrence. The position starts from 1.
+
+Note that numbers can be negative.
+
+You can stop typing in the console in IDEA by pressing Ctrl+D after you have entered the last number and hit Enter.
+
+Sample Input 1:
+
+5
+1
+2
+3
+4
+5
+Sample Output 1:
+
+5 1
+Sample Input 2:
+
+-100000
+-100000
+-100000
+Sample Output 2:
+
+-100000 1
+*/
+
+fun main() {
+    var numbers: MutableList<Int> = mutableListOf()
+    //keep adding numbers to the list until exited
+    while (true) {
+        val number = readln().toInt()
+        numbers.add(number)
+        var max = numbers[0]
+        var maxIndex = 1
+        for (i in 1..<numbers.size) {
+            if (numbers[i] > max) {
+                max = numbers[i]
+                maxIndex = i + 1
+            }
+    }
+        println("$max $maxIndex")
+    }
+
+}
+
+
