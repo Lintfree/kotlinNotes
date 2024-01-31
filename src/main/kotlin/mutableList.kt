@@ -521,3 +521,73 @@ fun main() {
 	return result
 }
  */
+
+/*Imagine that you have a wish list.
+It's very long and you want all the listed items; however,
+you can't buy the items with the price greater than limit.
+
+Write a function makeMyWishList that returns a map with all the elements with the price lower than or equal to limit.
+
+fun makeMyWishList(wishList: Map<String, Int>, limit: Int): MutableMap<String, Int> {
+
+	val result = mutableMapOf<String, Int>()
+	for ((key, value) in wishList) {
+		if (value <= limit) {
+			result[key] = value
+		}
+	}
+	return result
+}
+
+fun makeMyWishList(wishList: Map<String, Int>, limit: Int) =
+	wishList.filterValues { it <= limit }.toMutableMap()
+
+ */
+
+/*
+Keys and values must be read on a new line each.
+Input is over when the program receives the word "stop" instead of the next key. If the same key is entered more than one time, MutableMap must keep the value that was entered first.
+
+Input: key: String, value: Int (on a new line), until the word "stop" is read.
+
+Output: resulting MutableMap<String, Int>.
+
+Sample Input 1:
+
+Alice
+88
+John
+92
+Harry
+60
+stop
+Sample Output 1:
+
+{Alice=88, John=92, Harry=60}
+Sample Input 2:
+
+Alice
+45
+Alice
+66
+stop
+Sample Output 2:
+
+{Alice=45}
+*/
+
+
+
+
+fun main() {
+	val studentsMarks = mutableMapOf<String, Int>()
+	while (true) {
+		val name = readln()
+		if (name == "stop") {
+			break
+		}
+		val mark = readln().toInt()
+		studentsMarks.putIfAbsent(name, mark)
+	}
+	print (studentsMarks)
+}
