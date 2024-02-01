@@ -272,6 +272,7 @@ In the input, you are given a List of products that you put on the shelf and a S
 Print out this product's position on the shelf. Note that products may repeat.
  */
 
+/*
 fun solution(products: List<String>, product: String) {
         for (i in products.indices) {
             for (j in products.indices) {
@@ -283,7 +284,7 @@ fun solution(products: List<String>, product: String) {
         }
 
     }
-
+*/
 /*
 fun main() {
     val products = readln().split(" ")
@@ -357,23 +358,64 @@ Sample Output 2:
 -100000 1
 */
 
+/*
 fun main() {
-    var numbers: MutableList<Int> = mutableListOf()
-    //keep adding numbers to the list until exited
+    val numbers = mutableListOf<Int>()
     while (true) {
-        val number = readln().toInt()
-        numbers.add(number)
-        var max = numbers[0]
-        var maxIndex = 1
-        for (i in 1..<numbers.size) {
-            if (numbers[i] > max) {
-                max = numbers[i]
-                maxIndex = i + 1
-            }
+        val input = readLine()
+        if (input == null) {
+            break
+        }
+        numbers.add(input.toInt())
     }
+    if (numbers.isNotEmpty()) {
+        val max = numbers.maxOrNull()
+        val maxIndex = numbers.indexOf(max) + 1
         println("$max $maxIndex")
     }
-
 }
+*/
+
+/*
+The roots of equation
+Given are numbers
+
+a,b,c,d
+Output in ascending order all the integers between
+0 and 1000
+ (inclusively) that are the roots of the equation
+
+. The roots of a cubic equation are the values of the variable that satisfy the equation.
+
+If a specified interval does not contain any roots of the equation, do not output anything.
+
+Hint
+The roots of a quadratic equation are the values of 'x' in the equation for which the equation holds true.
+In other words, the roots of a quadratic equation are the values of 'x'
+
+Details
+You can just iterate over x from 0 to 1000 and check the value of the expression.
+ */
+
+/*
+fun main() {
+    // put your code here
+
+    val a = readln().toInt()
+    val b = readln().toInt()
+    val c = readln().toInt()
+    val d = readln().toInt()
+
+    for (x in 0..1000) {
+        val y = (a * x * x * x) + (b * x * x) + (c * x) + d
+        if (y == 0) {
+            println(x)
+        }
+    }
+}
+*/
+
+
+
 
 
