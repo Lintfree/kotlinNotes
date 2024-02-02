@@ -236,5 +236,13 @@ fun summator(map: Map<Int, Int>): Int {
 	}
 	return sum
 }
+
+val map = buildMap<String, String> {
+	put ("Apple" , "Green")
+	put("Banana" , "Yellow")
+	put("Strawberry" , "Red")
+}
  */
+
+
 

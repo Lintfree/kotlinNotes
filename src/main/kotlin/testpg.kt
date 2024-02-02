@@ -414,7 +414,27 @@ fun main() {
     }
 }
 */
+/*
+Write a program that checks if a set of N numbers contains a number M.
 
+The first line contains the N number.
+The next N lines contain the set of numbers one number per line.
+
+The last line contains one integer number M.
+
+You need to output either YES or NO.
+
+Sample Input 1:
+5
+1
+2
+3
+4
+5
+
+Sample Output 1:
+YES
+ */
 
 
 
