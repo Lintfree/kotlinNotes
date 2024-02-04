@@ -436,6 +436,60 @@ Sample Output 1:
 YES
  */
 
+/*
+fun solution(newSet: MutableSet<String>, oldSet: Set<String>): MutableSet<String> {
+	for (i in oldSet) {
+		if (i.first().lowercaseChar() == 'a') {
+			newSet.add(i)
+		}
+	}
+	return newSet
+}
+*/
 
+
+//fun solution(new: MutableSet<String>, old: Set<String>) =
+	//new.apply { addAll(old.filter { it[0] in "aA" }) }
+
+
+//Write a program that reads four characters and checks for each character whether it is a digit.
+//
+//The program must print either true or false for each character in a new line.
+
+/*
+Sample Input 1:
+
+3
+@
+8
+d
+Sample Output 1:
+
+true
+false
+true
+false
+ */
+
+/*
+fun main() {
+
+	val list = mutableListOf<String>()
+	for (i in 1..4) {
+		val char = readln()
+		list += char
+	}
+
+	for (i in list) if (i.all { it.isDigit() }) {
+		println("true")
+	} else println("false")
+}
+*/
+//reads and prints individually
+fun main() {
+	repeat(4) {
+		println(readln().first().isDigit())
+	}
+}
 
 

@@ -106,5 +106,58 @@ println(elem in collection)
 println(collection.contains(elem))
 As you can see, the in keyword makes code easier to read.
 You should use in instead of contains(), as it is recommended in the documentation on kotlinlang.org.
+
+
+ */
+/*
+Anna has a home robot.
+She sent it to the store and provided with a list of purchases in the form of a Map with key as the name of the product
+and value as the number of items to be purchased.
+However, later Anna decided to send an additional list of purchases (another Map) to the robot.
+Write a function helpingTheRobot that combines the two purchase lists into one and returns it as the result.
+If both lists contain the same product, its quantity in the final MutableMap must be the total value from both lists.
+
+Tip: You can just use the addition operator: map[key] = a + b
+
+Input: purchases: Map<String, Int>, addition: Map<String, Int>
+Output: resulting MutableMap<String, Int>.
+
+Sample Input:
+purchases: {"bread" to 1, "potatoes" to 7, "milk" to 2}
+addition: {"milk" to 1, "water" to 3}
+
+Sample Result:
+{bread=1, potatoes=7, milk=3, water=3}
  */
 
+/*
+fun helpingTheRobot(purchases: Map<String, Int>, addition: Map<String, Int>) : MutableMap<String, Int> {
+
+	val result = mutableMapOf<String, Int>()
+	for ((key, value) in purchases) {
+		result[key] = value
+	}
+	for ((key, value) in addition) {
+		result[key] = result.getOrDefault(key, 0) + value
+	}
+return result
+}
+*/
+// another solution using apply and merge which I haven't learned yet
+// what is ak?
+/*
+addition is a collection (e.g., a list, set, or map) over which the forEach function is being called.
+{ ak -> merge(ak.key, ak.value, Int::plus) }
+is a lambda expression that takes an element from the addition collection as its argument
+and performs the merge operation using the key and value from ak.
+So, ak is just a variable name chosen to represent each element of the addition collection as it is being iterated over.
+It's a common practice to choose meaningful variable names,
+but the specific name ak is not a built-in keyword or special identifier in Kotlin.
+It could have been named something else, such as entry, pair, or any other valid variable name.
+ */
+/*
+fun helpingTheRobot(purchases: Map<String, Int>, addition: Map<String, Int>): MutableMap<String, Int> {
+	// write your code here
+	return purchases.toMutableMap().apply { addition.forEach { ak -> merge(ak.key, ak.value, Int::plus) } }
+}
+*/

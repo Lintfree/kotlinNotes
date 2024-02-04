@@ -1,4 +1,4 @@
-//class DeclatingClasses   {
+//class DeclaringClasses   {
 	/*
 	When programmers implement an object-oriented program, they often use already defined classes to build it.
 	For example, an object of the Scanner class allows you to get the next word from the console input, and this word is itself an object of the String class.
@@ -30,7 +30,7 @@
 	val empty: Emptiness = Emptiness()
 	We have just assigned a new object of the Emptiness class to the empty variable.
 	This variable has the Emptiness type so you can't reassign an object of any other type to it.
-	s a general rule in Kotlin the explicit type directive can be omitted:
+	as a general rule in Kotlin the explicit type directive can be omitted:
 
 	val empty = Emptiness()
 
@@ -82,6 +82,7 @@
 	Take a look at the example below. This program creates two patients and sets their properties, then prints them.
 	 */
 
+	/*
 	class Patient {
 		var name: String = "Unknown"
 		var age: Int = 0
@@ -102,6 +103,7 @@
 		println("${john.name}: ${john.age} yrs, ${john.height} cm")
 		println("${alice.name}: ${alice.age} yrs, ${alice.height} cm")
 	}
+	*/
 
 	/*
 	Pay attention that when we assign properties of Alice, the properties of John remain unchanged.
@@ -109,4 +111,44 @@
 	But we can reassign properties of alice because they are marked as var inside the Patient class.
 	 */
 
+	/*
+	Constructor
+	A class can have a constructor. A constructor is a special method that is used to initialize the properties of the class.
 	class Planet(var star: String = "Unknown Star", var mass: Double = 1.0, var numberOfSatellites: Int = 1)
+
+	class Rectangle {
+		var width: Int = 0
+		var height: Int = 0
+	}
+
+	fun printArea(rectangle: Rectangle) {
+		println(rectangle.width * rectangle.height)
+	}
+
+	fun main() {
+		val rectangle = Rectangle()
+		rectangle.width = 10
+		rectangle.height = 5
+		printArea(rectangle)
+	}
+	 */
+
+import java.util.Scanner
+
+class Book(title: String, author: String, pages: Int) {
+	var description: String = "$title by $author has $pages pages"
+
+}
+
+fun main(args: Array<String>) {
+	val input = Scanner(System.`in`)
+	val title = input.nextLine()
+	val author = input.nextLine()
+	val pages = input.nextInt()
+
+	val book = Book(title, author, pages)
+	println(book.description)
+}
+
+
+

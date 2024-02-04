@@ -412,3 +412,30 @@ fun main() {
 		}
 	}
 }
+
+/*fun solution() {
+
+	val a = readln()!!.toInt()
+	val b = readln()!!.toInt()
+
+	try {
+		println(a / b)
+	} catch (e: Exception) {
+		println(e.message)
+	} finally {
+		println("This is the end, my friend.")
+	}
+}
+
+fun solution() {
+	try {
+		println(readln().toInt() / readln().toInt())
+	} catch (e: Exception) {
+		println(e.message)
+	} finally {
+		println("This is the end, my friend.")
+	}
+}
+*/
+
+
