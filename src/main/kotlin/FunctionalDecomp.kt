@@ -81,6 +81,14 @@ If it is, the function returns the value of acc, which is the final result.
 Otherwise, it recursively calls itself with n - 1 as the new value of n and n * acc as the new value of acc.
  */
 
+/*
+Functional decomposition in Kotlin
+Functional decomposition is a process in software development where a complex system is broken down into simpler,
+easier-to-manage components, also known as functions or modules.
+This method is essential for understanding, maintaining, and improving software by separating functionalities;
+this encourages code reuse and testing.
+ */
+/*
 fun greet(name: String) = "Hello, $name!"
 fun getFeeling(feeling: String) = when (feeling) {
 
@@ -94,4 +102,24 @@ fun main() {
 	val greeting = greet(name)
 	val feeling = getFeeling("happy")
 		println("$greeting $feeling")
+}
+
+ */
+fun validatePassword(password: String): Boolean {
+	if (password.length < 5) {
+		println("Your password should be five or longer characters, please write a new password")
+		return false
+	} else {
+		println("Good password")
+		return true
+	}
+
+}
+
+fun main() {
+	var validationResult = false
+	while (!validationResult) {
+		val password = readln()
+		validationResult = validatePassword(password)
+	}
 }

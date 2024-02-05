@@ -1,4 +1,5 @@
 //in is a special keyword that is used to check whether a value is within a range
+/*
 fun main() {
 	val x = 10
 	val y = 9
@@ -61,5 +62,28 @@ fun main() {
 		val range2 = readln().toInt()..readln().toInt()
 		println(num in range2)
 	//}
-
 }
+*/
+
+
+/*
+fun main() {
+	val w = readln().toInt()
+	val x = readln().toInt()
+	val y = readln().toInt()
+	val z = readln().toInt()
+	val a = readln().toInt()
+
+	println(a in w..x || a in y..z)
+}
+ */
+// you can join readln() to make a range
+/*
+fun main() {
+	// write your code here
+	val firstRange = readln().toInt()..readln().toInt()
+	val secondRange = readln().toInt()..readln().toInt()
+	val number = readln().toInt()
+	println(number in firstRange || number in secondRange)
+}
+ */
