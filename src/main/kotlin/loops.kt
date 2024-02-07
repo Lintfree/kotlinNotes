@@ -162,6 +162,63 @@ fun main() {
 	println(add)
 }
 
+/*
+1. What the loops are
+Sometimes, the same actions need to be repeated several times: for example, to play several rounds of a game or print the same text on the screen. To solve this problem, you can use loops. Loops can be executed while a certain condition is true (the while loop) or can be repeated a certain number of times (the for loop).
+
+2. The while and do-while loops
+The while loops often use Boolean values, for example:
+
+while(y < 10) {
+    // To do something
+}
+It will execute the actions (the loop's body) while the value in y is less than ten. Here, the condition will be checked first, and next, if it is true, the loop's body will be executed. If you need another scenario: first execute the loop's body and then check the condition, you should use the do-while loop. In such a case, the body will be executed at least one time:
+
+do {
+    // To do something
+} while(y < 10)
+3. The for loop
+The for loops often use Ranges to define how many times the body of the loop will be executed:
+
+for (i in 1..3) {
+  // To do something
+}
+In this case, the body of the loop will be executed three times: 1 <= i <= 3. Kotlin has several ways to define the borders of a range; for example, the range 1 <= i < 3 can be defined as follows:
+
+for (i in 1 until 3) {
+  // To do something
+}
+4. Boolean variables in the loop conditions
+If you need to work with Boolean variables, you should omit the comparing part in the condition:
+
+while (b == true) {
+    // ...
+}
+vs
+
+while (b) {
+    // ...
+}
+An opposite example:
+
+while (b == false) {
+    // ...
+
+    Loops often require changing the value of a variable. To do that, you can use the var variable:
+
+var y = 5
+do {
+    println(y)
+    y += 2
+} while(y < 10)
+This code initializes the variable y with the value 5 and next, changes the variable in the loop. The loop will be executed in 3 steps:
+
+y = 5. println(y). y = 7.
+because y < 10, println(y), y = 9.
+because y < 10, println(y), y = 11.
+because y > 10, stop the loop. In the end, the following numbers: 5, 7, and 9 will be printed in the console.
+ */
+
 
 
 
