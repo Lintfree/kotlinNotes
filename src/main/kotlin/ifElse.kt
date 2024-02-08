@@ -103,6 +103,7 @@ In Kotlin, the if expression can be also assigned to a variable or be a returned
 in such a case, the last operator in each branch will be returned:
 */
 
+/*
 val max1 = if (x > y) {
 	println(x)
 	// if x > y return x
@@ -113,6 +114,7 @@ val max1 = if (x > y) {
 	// if x <= y return y
 	y
 }
+*/
 
 /*
 For input x = 5 and y = 15, the result will be max = 15; and otherwise, if x = 20 and y = 15, the result will be max = 20.
@@ -121,6 +123,7 @@ The conditional operator as an expression: functions
 It is the same with functions:
 */
 
+/*
 fun max2(x: Int, y: Int) = if (x > y) {
 	println(x)
 	// if x > y return x
@@ -131,8 +134,11 @@ fun max2(x: Int, y: Int) = if (x > y) {
 	// if x <= y return y
 	y
 }
+*/
+
 //Or, in the full notation:
 
+/*
 fun max3(x: Int, y: Int): Int {
 	return if (x > y) {
 		println(x)
@@ -145,4 +151,18 @@ fun max3(x: Int, y: Int): Int {
 		y
 	}
 }
+*/
 
+/*
+fun iterator(map: Map<String, Int>) {
+	for ((key, value) in map) {
+		if (value % 3 == 0) {
+			println("Fizz")
+		} else if (value % 5 == 0) {
+			println("Buzz")
+		} else {
+			println("FizzBuzz")
+		}
+	}
+}
+*/
