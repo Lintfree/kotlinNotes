@@ -244,5 +244,38 @@ val map = buildMap<String, String> {
 }
  */
 
+/*
+add the data of a new user. Write a function addUser that takes a map with user data userMap, a login, and a password and adds the latter two to userMap.
 
+If userMap already contains a user with such a login, firstly print the following string: "User with this login is already registered!". After that, output the userMap without changes.
+
+Input: userMap: Map<String, String>, login: String, password: String
+
+Output: updated userMap: MutableMap<String, String>
+ */
+
+/*
+	fun addUser(userMap: Map<String, String>, login: String, password: String): MutableMap<String, String> {
+		var newUserMap = userMap.toMutableMap()
+		if (newUserMap.containsKey(login)) {
+			println("User with this login is already registered!")
+		} else {
+			newUserMap = userMap.toMutableMap()
+			newUserMap.put(login, password)
+		}
+		return newUserMap
+	}
+*/
+
+fun addUser(userMap: Map<String, String>, login: String, password: String): MutableMap<String, String> {
+	val userMapNew = userMap.toMutableMap()
+	if (userMapNew.putIfAbsent(login, password) != null) { //putIfAbsent(key, value) is new to me
+		println("User with this login is already registered!")
+	}
+	return userMapNew
+}
+fun main() {
+	val userMap = mapOf<String, String>( "Scott" to "1234")
+	println(addUser(userMap, "Diana", "4321")) // output: {Scott=1234, Diana=4321} $newUserMap
+}
 

@@ -144,3 +144,15 @@ for (i in 1 until 6) { ... }   // half-open range: 1, 2, 3, 4, 5
 for (x in 1..6 step 2) { ... } // step 2: 1, 3, 5
 for (x in 6 downTo 1) { ... }  // closed range, backward
  */
+
+/*
+Initializing a list
+Create a mutable list of integers named numbers with 100 elements.
+Its first element must be 1, the tenth must be 10, and the hundredth one must be 100.
+All other elements must be equal to 0.
+ */
+fun main() {
+	val numbers = MutableList(100) { if (it == 0) 1 else if (it == 9) 10 else if (it == 99) 100 else 0 }
+	//val numbers = MutableList(100) { if (it == 0 || it == 9 || it == 99) it + 1 else 0 }
+	println(numbers.joinToString())
+}

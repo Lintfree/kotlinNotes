@@ -127,6 +127,35 @@ fun main() {
 		println("NO")
 	}
 }
+easy conversion
+fun intsToSet(ints: MutableList<Int>): Set<Int> = ints.toSet()
+fun intsToSet(ints: List<Int>): Set<Int> = ints.toSet()
+ */
+/*
+You are given a MutableSet of integers and an integer as input.
+Check if the given integer is present in the MutableSet.
+If so, return an empty Set. If not, just return the same set.
+ */
 
+fun solution(elements: MutableSet<Int>, element: Int): MutableSet<Int> {
+	var setOrClear = mutableSetOf<Int>()
+	setOrClear = elements
+	if (element in elements) {
+		setOrClear.clear()
+	}
+	return setOrClear
+}
 
+// refactored/simplified
+/*
+fun solution(elements: MutableSet<Int>, element: Int) =
+    if (elements.contains(element)) { mutableSetOf<Int>() } else { elements }
+
+   fun updateSet(elements: MutableSet<Int>, element: Int): MutableSet<Int> {
+    val updatedSet = elements.toMutableSet()
+    if (element in elements) {
+        updatedSet.clear()
+    }
+    return updatedSet
+}
  */

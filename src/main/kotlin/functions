@@ -25,6 +25,10 @@ fun functionName(param1: Type1, param2: Type2, ...): ReturnType {
         return "Hello, $name!" //returns to whatever called greet
     }
 
+    fun hello(name: String) {
+            println("Hello, $name")
+        }
+
     /*
 Kotlin also supports named arguments, allowing you to note the names of the parameters when invoking the function.
 This feature is especially helpful when a function has numerous parameters with default values,
@@ -72,9 +76,7 @@ Named arguments amplify code readability and enable calling functions with param
         println(joinOptions(listOf("a", "b", "c", "d", "e", "f", "g")))  // [a, b, c, d, e, f, g]
     }
 
-    fun hello(name: String) {
-        println("Hello, $name")
-    }
+
 
     /*
 Functions without return

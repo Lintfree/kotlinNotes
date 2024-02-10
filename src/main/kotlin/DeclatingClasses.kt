@@ -132,7 +132,7 @@
 		printArea(rectangle)
 	}
 	 */
-
+/*
 import java.util.Scanner
 
 class Book(title: String, author: String, pages: Int) {
@@ -152,3 +152,19 @@ fun main(args: Array<String>) {
 
 
 
+class BankAccount (deposited: Long, withdrawn: Long) {
+	var deposited: Long
+	var withdrawn: Long
+	var balance: Long
+	init {
+		this.deposited = deposited
+		this.withdrawn = withdrawn
+		this.balance = deposited - withdrawn
+	}
+}
+//data class is similar to class, but it can have default values for properties,
+// and it can be extended from other classes
+
+data class BankAccount(var deposited: Long, var withdrawn: Long, var balance: Long = deposited - withdrawn)
+
+ */

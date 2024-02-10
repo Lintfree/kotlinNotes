@@ -11,23 +11,23 @@ This method is in line with Kotlin's support for the functional programming styl
 Pure Functions: The result of a pure function only depends on its input values and has no noticeable side effects.
 This predictability makes it simpler to understand what the function will do.
 */
-fun add(a: Int, b: Int): Int {
-    return a + b // Pure function
-}
+//fun add(a: Map<String, String>, b: Int): Int {
+    //return a + b // Pure function
+//}
 
 /*
 Immutability: Once created, immutable data can't be altered.
 This prevents issues with shared states and makes concurrent environments less risky.
 */
-val list = listOf(1, 2, 3) // Immutable list
+//val list = listOf(1, 2, 3) // Immutable list
 /*
 
 Higher-Order Functions: Kotlin functions can take other functions as parameters or return functions, making the code more modular and reusable.
 */
-fun applyOperation(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
-    return operation(a, b) // Higher-order function usage
-}
-val sum = applyOperation(2, 3, ::add) // Passes ::add as a parameter
+//fun applyOperation(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    //return operation(a, b) // Higher-order function usage
+//}
+//val sum = applyOperation(2, 3, ::add) // Passes ::add as a parameter
  //println(sum)
 
 /*
@@ -105,6 +105,7 @@ fun main() {
 }
 
  */
+/*
 fun validatePassword(password: String): Boolean {
 	if (password.length < 5) {
 		println("Your password should be five or longer characters, please write a new password")
@@ -123,3 +124,5 @@ fun main() {
 		validationResult = validatePassword(password)
 	}
 }
+
+ */
