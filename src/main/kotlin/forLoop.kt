@@ -156,3 +156,22 @@ fun main() {
 	//val numbers = MutableList(100) { if (it == 0 || it == 9 || it == 99) it + 1 else 0 }
 	println(numbers.joinToString())
 }
+
+fun greetUser(
+	name: String,
+	admin: Boolean = false,
+	smith: Boolean = false,
+	honorific: String = "",
+	greet: String = "Greetings"
+): String {
+	return if (!admin && !smith) {
+		"$greet, $honorific $name"
+	} else {
+		"Matrix Error"
+	}
+}
+// do not change lines above
+
+fun greetUser(greet: String = "Hello, ", honorific: String = "Mr. ", name: String = "Anderson"): String {
+return "$greet $honorific $name"
+}

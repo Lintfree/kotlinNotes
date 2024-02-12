@@ -112,7 +112,7 @@ fun main() {
 
 	You can also use another delimiter to separate elements :
 
-	println(southernCross.joinToString(" -> "))   //  A
+	println(southernCross.joinToString(" -> "))   //  A crux -> Gacrux -> Imai -> Mimosa
 
 	Working with multiple lists
 	Now, let’s look at a couple of things you might want to know about when working with several string lists.
