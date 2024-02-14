@@ -1,14 +1,14 @@
 //If the coffee machine has enough supplies to make the specified amount of coffee,
 // the program should print "Yes, I can make that amount of coffee".
 // Otherwise, it should print "No, I can make only X cups of coffee".
-fun totalCups(water: Int, neededWater: Int, milk: Int, neededMilk: Int, beans: Int, neededBeans: Int, cupsNeeded: Int) {
+fun totalCups(water: Int, neededWater: Int, milk: Int, neededMilk: Int, beans: Int, neededBeans: Int, cupsNeeded: Int): String {
 	val cups = listOf(water / 200, milk / 50, beans / 15)
 	val cupsAvail = cups.minOrNull() ?: 0
 
-	when {
-		cupsNeeded == cupsAvail -> return println("Yes, I can make that amount of coffee")
-		cupsNeeded < cupsAvail -> return println("Yes, I can make that amount of coffee (and ${cupsNeeded - cupsAvail} more than that)")
-		cupsNeeded > cupsAvail -> return println("No, I can make only $cupsAvail cups of coffee")
+	return when {
+		cupsNeeded == cupsAvail ->"Yes, I can make that amount of coffee"
+		cupsNeeded < cupsAvail -> return "Yes, I can make that amount of coffee (and  even ${cupsAvail - cupsNeeded} more than that)"
+		else -> { return "No, I can make only $cupsAvail cups of coffee" }
 	}
 }
 
@@ -26,7 +26,7 @@ fun main() {
 	val neededBeans = cupsNeeded * 15
 
 	println(totalCups( water, neededWater, milk, neededMilk, beans, neededBeans, cupsNeeded))
-	//TODO Remove Kotlin unit from being printed?
+
 	/*
 		println("Starting to make a coffee")
 		println("Grinding coffee beans")
