@@ -311,3 +311,41 @@ class EspressoMachine {
     This value is then passed to the primary constructor along with the totalCost.
 }
  */
+
+/*
+Write the class IceCreamOrder that has one Int property: price. The class must have two secondary constructors.
+
+The first one takes one Int argument: popsicles, which signifies the number of popsicles the customer wants.
+The price is calculated as 7 currency units per popsicle.
+
+The second constructor takes two Int arguments: scoops and toppings,
+which signifies the number of ice cream scoops and the number of different toppings that the customer wants in the order.
+The price is calculated as 5 currency units per scoop plus 2 currency units per topping.
+ */
+
+class IceCreamOrder {
+
+	var price: Int = 0
+
+	constructor(popsicles: Int) {
+		price = 7 * popsicles
+	}
+
+	constructor(scoops: Int, toppings: Int) {
+		price = 5 * scoops + 2 * toppings
+	}
+}
+
+/*
+Given a class named Box. It has three double properties.
+
+Write a member function to calculate the volume of the box.
+The function must be named as getVolume. It should take no arguments and return a double result.
+ */
+
+class Box(var height: Double, var width: Double, var length: Double) {
+
+	fun getVolume(): Double {
+		return height * width * length
+	}
+}
