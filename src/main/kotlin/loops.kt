@@ -120,7 +120,7 @@ fun main() {
 	val reps = readln().toInt()
 	var j = 1
 	var numOfReps = 0
-	// prints out like this 1 2 2 3 3 with the input limiting the amout printed out
+	// prints out like this 1 2 2 3 3 with the input limiting the amount printed out
 	do {
 		repeat(j) {
 			if (numOfReps < reps)
