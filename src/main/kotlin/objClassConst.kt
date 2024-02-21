@@ -35,4 +35,44 @@ fun main() {
     println(c4.model)
     println(c4.year)
     }
+
+    A class is a blueprint for creating objects that have properties and functions.
+    A class is declared using the keyword class followed by the class name and optional type parameters. For example:
+
+	class Person(val name: String, var age: Int)
+
+	This declares a class named Person with two properties: name and age.
+	The val keyword means that the property is read-only, while the var keyword means that the property is mutable.
+
+	A constructor is a special function that is used to initialize a class instance.
+	A class can have a primary constructor and one or more secondary constructors.
+	The primary constructor is declared in the class header, after the class name and type parameters. For example:
+
+	class Person(val name: String, var age: Int) // primary constructor
+	The primary constructor can have parameters that are used to initialize the class properties or run some code in the initializer blocks.
+	The initializer blocks are declared with the init keyword inside the class body. For example:
+
+
+	class Person(val name: String, var age: Int) {
+        init {
+            println("Person created with name $name and age $age")
+        }
+	}
+
+	The secondary constructors are declared inside the class body with the constructor keyword.
+	They must call the primary constructor or another secondary constructor using the this keyword.
+	The this keyword is used to refer to the current class instance or its members.
+	For example:
+
+	class Person(val name: String, var age: Int) {
+        constructor(name: String) : this(name, 0) // secondary constructor that calls the primary constructor
+        constructor() : this("Unknown") // secondary constructor that calls another secondary constructor
+        fun printInfo() {
+            println("Name: $name, Age: $age")
+        }
+        fun updateAge(newAge: Int) {
+            this.age = newAge // use this to access the property of the current instance
+            this.printInfo() // use this to call a function of the current instance
+        }
+	}
  */
