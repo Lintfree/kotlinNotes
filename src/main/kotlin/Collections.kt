@@ -161,3 +161,43 @@ fun helpingTheRobot(purchases: Map<String, Int>, addition: Map<String, Int>): Mu
 	return purchases.toMutableMap().apply { addition.forEach { ak -> merge(ak.key, ak.value, Int::plus) } }
 }
 */
+
+/*
+Given a string of numbers separated by commas, create a MutableList out of these numbers and find the third smallest element.
+Assume that the input string always has at least three distinct numbers. Return the third smallest number.
+
+import java.util.*
+
+fun thirdSmallest(numbers: String): Int {
+	// Step 1: Initialize MutableList and populate it
+	var numberList: MutableList<Int> = mutableListOf()
+	numberList = numbers.split(",").map { it.toInt() }.toMutableList()
+
+	// Step 2: Sort the MutableList
+	// Your code goes here
+	numberList.sort()
+
+	// Step 3: Return the third smallest number
+	// Your code goes here
+	return numberList[2]
+}
+
+fun main(args: Array<String>) {
+	// Get input string from user
+	val input = readLine()!!
+
+	// Call the thirdSmallest method and print the output
+	println(thirdSmallest(input))
+}
+
+fun thirdSmallest(numbers: String) =
+	numbers.split(",")
+		.map { it.toInt() }
+		.sorted()[2]
+
+fun main(args: Array<String>) {
+	readln()
+		.let { thirdSmallest(it) }
+		.also { println(it) }
+}
+*/

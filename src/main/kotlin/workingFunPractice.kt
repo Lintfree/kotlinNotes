@@ -276,6 +276,7 @@ fun main() {
 
 //can be done better with repeat?
 
+/*
 fun main() {
 	val numOfParts = readln().toInt()
 	var larger = 0
@@ -288,4 +289,54 @@ fun main() {
 		if (part > 0) larger ++
 	}
 	println("$perfect $larger $smaller")
+}
+ */
+
+/*
+The sum of N numbers
+Write a program that calculates the sum of N numbers.
+The first line contains the number N.
+The other lines contain N numbers.
+Output the sum of N numbers.
+
+
+fun main() {
+	// write your code here
+	val n = readln().toInt()
+	var nums = mutableListOf <Int>()
+	for (i in 1..n) {
+		nums.add(readln().toInt())
+	}
+	val sum = nums.sum()
+	println(sum)
+}
+
+ */
+//below is better
+//fun main() {
+//    print(List(readLine()!!.toInt()) { readLine()!!.toInt() }.sum())
+//}
+
+/*
+Write a program that reads three double values a, b, c, and solves this equation:
+
+a * x + b = c
+Output the value of x.
+Guaranteed that a is not 0.
+
+Sample Input 1:
+2
+-1
+2
+Sample Output 1:
+1.5
+Write a program in Kotlin
+ */
+
+fun main() {
+	val a = readln().toDouble()
+	val b = readln().toDouble()
+	val c = readln().toDouble()
+	val x = (c - b) / a
+	println(x)
 }

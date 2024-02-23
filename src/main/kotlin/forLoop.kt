@@ -151,6 +151,8 @@ Create a mutable list of integers named numbers with 100 elements.
 Its first element must be 1, the tenth must be 10, and the hundredth one must be 100.
 All other elements must be equal to 0.
  */
+
+/*
 fun main() {
 	val numbers = MutableList(100) { if (it == 0) 1 else if (it == 9) 10 else if (it == 99) 100 else 0 }
 	//val numbers = MutableList(100) { if (it == 0 || it == 9 || it == 99) it + 1 else 0 }
@@ -174,4 +176,49 @@ fun greetUser(
 
 fun greetUser(greet: String = "Hello, ", honorific: String = "Mr. ", name: String = "Anderson"): String {
 return "$greet $honorific $name"
+}
+
+ */
+
+/*
+The index of the first max
+Write a program that reads a list of integers and finds the index of the first maximum in the list.
+In the other words, find the maximum in the list and output the index of its first occurrence.
+
+The first line contains the number of elements in the list.
+The other lines contain the elements of the list. There is at least one element in the list.
+
+Output a single integer value, which is the index of the first maximum.
+Finding the index of the maximum element
+ */
+
+/*
+fun main() {
+	val size = readln().toInt()
+	val mutList: MutableList<Int> = mutableListOf()
+	for (i in 0..<size) {
+		mutList.add(readln().toInt())
+	}
+	var max = mutList[0]
+	var maxIndex = 0
+	for (i in 1..mutList.lastIndex) {
+		if (mutList[i] > max) {
+			max = mutList[i]
+			maxIndex = i
+		}
+	}
+	println(maxIndex)
+}
+
+ */
+
+fun main() {
+	val size = readln().toInt()
+	val numbers = mutableListOf<Int>()
+	repeat(size) {
+		numbers.add(readln() .toInt())
+	}
+	val maxNumber = numbers.maxOrNull()
+	val maxIndex = numbers.indexOf(maxNumber)
+	println(maxIndex)
 }
