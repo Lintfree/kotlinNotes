@@ -438,4 +438,55 @@ fun solution() {
 }
 */
 
+/*
+require is used to check if a condition is true
+can be used similarly to try-catch
+require (condition){     // if condition is false an illegalArgumentException is thrown with the message
+"message"
+}
+
+Precondition functions are a great way to communicate requirements before the code is executed.
+They can be cleaner because the condition is checked before the code is executed.
+prefer using require instead of check in your code if possible
+The precondition in the kotlin standard library are:
+check - throws an IllegalStateException if the condition is false
+checkNotNull - throws an IllegalStateException if the argument is null, otherwise returns the non-null argument
+require - throws an IllegalArgumentException if the condition is false
+requireNotNull - throws an IllegalArgumentException if the argument is null, otherwise returns the non-null argument
+error - throws an IllegalStateException with the specified message if the argument is null otherwise returns the non-null argument
+assert - throws an AssertionError if the condition is false and the assertion compiler flag is enabled
+
+val input: Sting = checkNotNull(readln()){
+//Throw an IllegalStateException with the message "No input was provided"
+"No input was provided"
+}
+
+The throw keyword is used to throw an exception.
+which can be used to point to a class that extends Exception
+class can be used in many places in the code and with if statements or in try-catch?
+
+class MyException(message: String) : Exception(message)//recieves a message
+
+fun main() {
+	val input: String = readln()
+	if (input.isEmpty()) {
+		throw MyException("No input was provided")
+	}
+}
+or
+//prints a message
+class otherException() :
+    IllegalArgumentException("No input was provided")
+
+
+fun main() {
+	val input: String = readln()
+	if (input.isEmpty()) {
+		throw otherException()
+	}
+}
+
+It is up to you to introduce the appropriate safeguards to prevent your application from crashing.
+ */
+
 
