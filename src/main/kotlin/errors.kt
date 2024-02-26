@@ -487,6 +487,22 @@ fun main() {
 }
 
 It is up to you to introduce the appropriate safeguards to prevent your application from crashing.
+
+runCatching() is a function that can be used to catch exceptions in Kotlin.
+In Kotlin, the runCatching function is used to run a block of code and catch any exceptions that occur.
+It returns a Result object that contains either the result of the block if it succeeds,
+or the exception if it fails.
+
+val result: Result<Int> = runCatching {
+    "123".toInt()
+}
+
+if (result.isSuccess) {
+    println("Success: ${result.getOrThrow()}")
+} else {
+    println("Failure: ${result.exceptionOrNull()}")
+}
+
  */
 
 

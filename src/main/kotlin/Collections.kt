@@ -200,4 +200,9 @@ fun main(args: Array<String>) {
 		.let { thirdSmallest(it) }
 		.also { println(it) }
 }
+
+fun solution(elements: MutableList<String>, index: Int): MutableList<String> {
+	elements.removeAt(index)
+	return elements
+}
 */
