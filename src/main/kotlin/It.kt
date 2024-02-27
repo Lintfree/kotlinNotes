@@ -23,3 +23,26 @@ and if there are multiple parameters, explicit names must be used for clarity.
 
 Overall, "it" simplifies the syntax when working with single-parameter lambda expressions in Kotlin.
  */
+
+/*
+val narrationModifier: (String) -> String = { message ->
+	val numExclamationPoints = 3
+	message.uppercase() + "!".repeat(numExclamationPoints)
+}
+ */
+
+val narrationModifier: (String) -> String = {
+	val numExclamationPoints = 3
+	it.uppercase() + "!".repeat(numExclamationPoints)
+}
+
+//When defining lambdas that accept exactly one argument, the "it" identifier can be used instead of the parameter name.
+//Both it and a named parameter cen be used when you have a single parameter in the lambda expression.
+
+// it is great for shorter expressions
+val square: (Int) -> Int = { it * it }
+val uppercase: List<String> = "abc".map { it.uppercase() }
+val count: Int = "Mississippi".count { it == 's' }
+val doubles: Map<String, Int> = mapOf("a" to 1, "b" to 2, "c" to 3).mapValues { it.value * 2 }
+//but it is not great for longer more complex expressions like nested lambdas because it is not clear what to do with the value
+

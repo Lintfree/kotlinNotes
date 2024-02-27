@@ -165,4 +165,6 @@ fun iterator(map: Map<String, Int>) {
 		}
 	}
 }
+
+fun nullOrNotNull(number: Int?): Int = if (number == null) -1 else number
 */
