@@ -167,4 +167,31 @@ class BankAccount (deposited: Long, withdrawn: Long) {
 
 data class BankAccount(var deposited: Long, var withdrawn: Long, var balance: Long = deposited - withdrawn)
 
- */
+* from Koans
+This code snippet defines a function sendMessageToClient that takes in a Client object,
+a message, and a Mailer object.
+It checks if the client and message are not null,
+then retrieves the client's email address and sends the message using the provided mailer.
+*/
+
+
+data class Client(val personalInfo: PersonalInfo?)
+data class PersonalInfo(val email: String?)
+
+interface Mailer {
+	//an interface is a way to define a contract for classes.
+	// It can contain abstract methods as well as implementations of methods.
+	// Classes can implement multiple interfaces, allowing them to inherit behavior from multiple sources.
+	fun sendMessage(email: String, message: String)
+}
+
+fun sendMessageToClient(
+        client: Client?, message: String?, mailer: Mailer) {
+    if (client != null && message != null) {
+        val email = client.personalInfo?.email
+        if (email != null) {
+            mailer.sendMessage(email, message)
+        }
+    }
+}
+

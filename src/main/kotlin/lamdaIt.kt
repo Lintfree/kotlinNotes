@@ -86,7 +86,23 @@ val narrationModifier: (String) -> String = {  //  -> String is the return type
 Unlike regular functions, the return type is inferred from the last expression of the lambda.
 It also allows us to omit the return keyword.
 
+Multiple arguments
+val loudNarration: (String, String) -> String = { message, tone ->
+ 	when (tone) {
+ 		"excited" -> {
+ 			val numExclamationPoints = 3
+ 			message.uppercase() + "!".repeat(numExclamationPoints)
+ 		}
+ 		"sneaky" -> {
+ 			"$message. The narrator has just blown Madrigal's cover.".uppercase()
+ 		} else-> message.uppercase()
+ 	}
+ }
 
+ println(loudNarration("Madrigal cautiously tip-toes through the hallway", "sneaky"))
+//MADRIGAL CAUTIOUSLY TIP-TOES THROUGH THE HALLWAY. THE NARRATOR HAS JUST BLOWN MADRIGAL'S COVER.
 
-
+Unlike regular functions, lambdas cannot have default arguments.
+The function type is the only information Kotlin retains about the lambda, and it is not posssible to include default arguments.
+Named arguments are also not supported in lambdas.
  */

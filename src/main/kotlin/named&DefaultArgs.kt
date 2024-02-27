@@ -64,6 +64,19 @@ They can also be another named argument or a function.
 	sum2(2, 3) // 2 + 3
 }
 /*
+In Kotlin, default arguments allow you to specify default parameter values for functions.
+When a function is called, if an argument is not provided for a parameter with a default value, the default value is used instead.
+
+Here's an example:
+
+fun greet(name: String = "World") {
+    println("Hello, $name!")
+}
+
+greet() // Output: Hello, World!
+greet("John") // Output: Hello, John!
+
+
 To sum it all up, use named arguments wisely to improve code readability and
 change the argument order when some parameters have default values.
  */
