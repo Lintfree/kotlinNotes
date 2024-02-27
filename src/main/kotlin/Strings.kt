@@ -44,3 +44,21 @@ Example from Bounty board.
 
 // does not need a return statement
 fun makeUpperCase(str: String) = str.uppercase()
+
+//triple quoted strings can span multiple lines
+val poem = """
+	|It was the best of times,
+	|it was the worst of times.
+	""".trimMargin() // | is the default margin character for trimMargin
+
+const val question = "life, the universe, and everything"
+const val answer = 42
+
+val tripleQuotedString = """
+    #question = "$question"
+    #answer = $answer""".trimMargin( "#")
+
+fun main() {
+	println(tripleQuotedString)
+	println(poem)
+}

@@ -67,3 +67,24 @@ for (i in numbers.indices) {
 // Index 3: 40
 // Index 4: 50
  */
+
+/*
+Lamdas or Anonymous Functions in Kotlin are functions without a name.
+They are used to pass functions as arguments to other functions.
+
+Syntax:
+val someLamda: (Int, Int) -> Int = { a, b -> a + b }
+or
+"Missippi".count({letter -> letter =='s'})
+
+project NyetHack has some examples
+
+val narrationModifier: (String) -> String = {  //  -> String is the return type
+	val numExclamationPoints = 3
+	message.uppercase() + "!".repeat(numExclamationPoints)
+}
+Unlike regular functions, the return type is inferred from the last expression of the lambda.
+It also allows us to omit the return keyword.
+
+
+ */

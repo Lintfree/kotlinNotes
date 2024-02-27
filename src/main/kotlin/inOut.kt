@@ -252,3 +252,4 @@ fun perimeter(x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Do
     val perimeter = side1 + side2 + side3 + side4
     return perimeter
 }
+
