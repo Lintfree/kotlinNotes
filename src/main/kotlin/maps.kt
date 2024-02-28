@@ -279,3 +279,11 @@ fun main() {
 	println(addUser(userMap, "Diana", "4321")) // output: {Scott=1234, Diana=4321} $newUserMap
 }
 
+//The containsKeyAndValue function gets map: Map < String, String > and the string value: String as input parameters.
+// If the map contains one or more keys that are equal to value and one or more values that are equal to value,
+// the function returns true, otherwise it returns false.
+fun containsKeyAndValue(map: Map<String, String>, value: String): Boolean {
+	// put your code here
+	return map.containsValue(value) && map.containsKey(value)
+}
+
