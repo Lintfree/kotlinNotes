@@ -331,7 +331,7 @@ Sample Input 1:
 Sample Output 1:
 1.5
 Write a program in Kotlin
- */
+
 
 fun main() {
 	val a = readln().toDouble()
@@ -339,4 +339,15 @@ fun main() {
 	val c = readln().toDouble()
 	val x = (c - b) / a
 	println(x)
+}
+*/
+fun main() {
+	val number = readLine()!!.toInt()
+	println(round(number))
+}
+
+// do not change function below
+
+fun round(number: Int): Int? {
+	return if (number >= 1000) 0 else number
 }

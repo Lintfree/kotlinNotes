@@ -1,6 +1,30 @@
 import kotlin.math.PI
 fun main() {
     /*
+   Function arguments are some data that the function takes as the input to perform some actions with it.
+ Arguments are usually passed in parentheses, separated by commas:
+ A function can have as many arguments as you want, it depends on the specific task.
+ Also, it might not have arguments at all.
+ For example, there may be an open_all_files function that opens all text files from a directory.
+
+ Another example of a function with no arguments is an output function that prints a phrase to the console
+ after each completed block of code. It takes nothing as input and just prints out the string multiple times.
+
+ In any case, no matter how many arguments a function has, there is always the result of its work:
+ a number, a string, an open file, and so on. In some cases, this result is visible to us.
+
+However, after we see the result, we cannot do anything with it.
+It cannot be further used in the code, passed as an argument to another function.
+Functions that perform certain actions but do not return a result are often referred to as procedures.
+
+If we need to do something else with the result, we need to make it returnable.
+If the function returns a result, it means that the function has received some specific answer
+such as a number or a string that can be used further in the program.
+The return is an operator with which we return the result. It is used in all programming languages.
+Functions that take no arguments can return results too.
+Usually, it will always be the same result (but sometimes there are exceptions)
+
+
 You declare functions in Kotlin using the fun keyword,
 a name, a list of parameters (if needed), the return type, and the function body.
 the fundamental syntax for declaring a function is as follows:

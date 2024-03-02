@@ -132,11 +132,20 @@ fun intsToSet(ints: MutableList<Int>): Set<Int> = ints.toSet()
 fun intsToSet(ints: List<Int>): Set<Int> = ints.toSet()
  */
 /*
+
+In Kotlin, a set is a collection that contains unique elements.
+It does not allow duplicate elements, and the order of elements is not guaranteed.
+Sets are commonly used to store a collection of distinct items or to perform set operations such as
+union, intersection, and difference.
+
+
+
 You are given a MutableSet of integers and an integer as input.
 Check if the given integer is present in the MutableSet.
 If so, return an empty Set. If not, just return the same set.
  */
 
+/*
 fun solution(elements: MutableSet<Int>, element: Int): MutableSet<Int> {
 	var setOrClear = mutableSetOf<Int>()
 	setOrClear = elements
@@ -145,7 +154,7 @@ fun solution(elements: MutableSet<Int>, element: Int): MutableSet<Int> {
 	}
 	return setOrClear
 }
-
+*/
 // refactored/simplified
 /*
 fun solution(elements: MutableSet<Int>, element: Int) =
@@ -158,7 +167,76 @@ fun solution(elements: MutableSet<Int>, element: Int) =
     }
     return updatedSet
 }
+
+
  */
 
+/*
+size returns the number of elements in the current collection.
+size = list.size
+size = set.size
+size = map.size
+
+clear() removes all elements from the current collection.
+cl = set.clear()
+cl = list.clear()
+cl = map.clear()
+
+sublist() returns a new list with the specified range of elements.
+sub = list.subList(1, 3) can only be used with lists.
 
 
+isEmpty() returns true if the current collection is empty.
+isEmpty = set.isEmpty()
+isEmpty = list.isEmpty()
+isEmpty = map.isEmpty()
+
+put() adds an element to the current collection.
+put = map.put() can only be used with maps
+
+add() adds an element to the current collection.
+add = list.add()
+add = set.add()
+the add function is specific to mutable list and set collections
+such as MutableList, ArrayList, and LinkedList in Kotlin.
+It is used to add an element to the end of the list.
+This function is not available for MutableMap.
+*/
+
+/*
+Your friends made presents for your birthday,
+but they just numbered them without signing their names.
+The most desirable presents are from Alice and Victor,
+so you want to know which gifts are from them.
+Write a function findByIndex(names: Set<String>): String
+and return the numbers of Alice's and Victor's presents separated by a comma and a space.
+
+Sample input:
+
+Ann, Alice, Bonny, Victor, Tom
+
+Sample output:
+
+1, 3
+*/
+
+fun findByIndex(names: Set<String>): String {
+return (names.indexOf("Alice")).toString() + ", " + (names.indexOf("Victor")).toString()
+}
+//fun findByIndex(names: Set<String>) = "${names.indexOf("Alice")}, ${names.indexOf("Victor")}"
+
+//Your function receives two sets of Int.
+// Return a new set of elements in the first set that are multiples of the size of the second set.
+//Sample Input:
+//10 11 14 16 2 1
+//2 1
+//Sample Output:
+//10 14 16 2
+
+fun solution(first: Set<Int>, second: Set<Int>): Set<Int> {
+	// put your code here
+	return first.filter { it % second.size == 0 }.toSet()
+}
+/*In the given function, second.size returns the number of elements in the second set.
+It is used to check if an element in the first set is divisible by the number of elements in the second set.
+ */

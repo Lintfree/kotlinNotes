@@ -287,3 +287,23 @@ fun containsKeyAndValue(map: Map<String, String>, value: String): Boolean {
 	return map.containsValue(value) && map.containsKey(value)
 }
 
+
+//Write a function removing that takes MutableMap<Int, String> and value as the input and creates a new MutableMap.
+// The new MutableMap should be the same as the input one, but without the element with the given value.
+// Return the resulting MutableMap. Do not change the original map.
+
+//Input: currentMap: MutableMap<Int, String>, value: String
+
+//Output: resulting MutableMap<Int, String>
+
+//Sample Input:
+//currentMap: 0 to "Sun", 3 to "Earth", 1 to "Mercury"
+//value: Sun
+
+//Sample Output:
+//{3=Earth, 1=Mercury}
+
+fun removing(currentMap: MutableMap<Int, String>, value: String): MutableMap<Int, String> {
+	// Write your code here. Do not print the result of the function!
+	return currentMap.filterValues { it != value }.toMutableMap()
+}

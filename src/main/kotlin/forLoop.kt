@@ -210,7 +210,7 @@ fun main() {
 	println(maxIndex)
 }
 
- */
+
 
 fun main() {
 	val size = readln().toInt()
@@ -222,3 +222,94 @@ fun main() {
 	val maxIndex = numbers.indexOf(maxNumber)
 	println(maxIndex)
 }
+*/
+
+/*
+Write a Kotlin program that accepts a space-separated string of integers as input.
+The program needs to create a list of these integers and
+then use a for loop to find the first element in the list that appears more than once.
+Print the first repeated integer as output. If no such number exists, print -1.
+
+Sample Input:
+1 2 3 4 5 3 6 7
+
+Sample Output:
+3
+
+
+Sample Input:
+8 8 9 10 11 12 13
+
+Sample Output:
+8
+*/
+
+
+//Find the first repeated number
+//Write a program that reads a list of integers and finds the first repeated number in the list.
+//In the other words, find the number that appears more than once in the list and output its first occurrence.
+
+ //import required
+import java.util.*
+
+fun main(args: Array<String>) {
+    // Read input string
+    val scanner = Scanner(System.`in`)
+    val input = scanner.nextLine()
+
+    // Convert the string to a list of integers
+	val numbers: MutableList<Int> = input.split(" ").map { it.toInt() }.toMutableList()
+
+    // Initialize data structures for finding first repeated number
+
+	for (i in 0..<numbers.size) {
+		var count = 0
+		for (j in 0..<numbers.size) {
+			if (numbers[i] == numbers[j]) {
+				count++
+			}
+		}
+		if (count > 1) {
+			println(numbers[i])
+			break
+		} else if (i == numbers.size - 1) {
+			println(-1)
+		}
+	}
+
+    // TODO: Write a for loop here to find the first repeated integer
+    //       If you find it, print the number and break the loop
+    //       If no repeated number is found, print -1
+}
+
+
+
+/*
+// import required
+import java.util.*
+
+fun main(args: Array<String>) {
+    // Read input string
+    val scanner = Scanner(System.`in`)
+    val input = scanner.nextLine()
+
+    // Convert the string to a list of integers
+    val numbers = input.split(" ").map { it.toInt() }.toMutableList()
+
+    // Initialize data structures for finding first repeated number
+
+    // TODO: Write a for loop here to find the first repeated integer
+    //       If you find it, print the number and break the loop
+    //       If no repeated number is found, print -1
+    val map = mutableMapOf<Int, Boolean>()
+    for (num in numbers) {
+        if (num in map) {
+            println(num)
+            return
+        }
+        map[num] = true
+    }
+    println(-1)
+}
+
+*/
