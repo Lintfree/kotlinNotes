@@ -75,4 +75,27 @@ fun main() {
             this.printInfo() // use this to call a function of the current instance
         }
 	}
+
+
  */
+
+// Point3D.kt
+class Point3D {
+	var x: Int = 0
+	var y: Int = 0
+	var z: Int = 0
+}
+
+// Main.kt
+fun createPoint(x: Int, y: Int, z: Int): Point3D {
+	val point = Point3D()
+	point.x = x
+	point.y = y
+	point.z = z
+	return point
+}
+
+fun main() {
+	val point = createPoint(1, 2, 3)
+	println("Created point at (${point.x}, ${point.y}, ${point.z})")
+}

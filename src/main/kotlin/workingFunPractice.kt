@@ -340,7 +340,7 @@ fun main() {
 	val x = (c - b) / a
 	println(x)
 }
-*/
+
 fun main() {
 	val number = readLine()!!.toInt()
 	println(round(number))
@@ -351,3 +351,43 @@ fun main() {
 fun round(number: Int): Int? {
 	return if (number >= 1000) 0 else number
 }
+*/
+fun identity(x: Int): Int {
+	x.toString()
+	return x
+}
+
+fun half(x: Int): Int = x / 2
+
+
+fun zero(x: Int): Int = 0
+
+
+
+/*
+fun generate(functionName: String): (Int) -> Int {
+	// TODO: provide implementation here
+	return when (functionName) {
+		"identity" -> ::identity
+		"half" ->  ::half
+		"zero" ->  ::zero
+		else -> :: zero
+	}
+
+}
+
+ */
+
+//Better and shorter, I overthinked it
+//The generate function receives a functionName as input,
+// which is then used in the when statement to determine which function to return.
+// When the returned function is invoked with an Int argument,
+// it performs the corresponding operation based on the functionName that was provided to the generate function.
+fun generate(functionName: String): (Int) -> Int {
+	when (functionName) {
+		"identity" -> return { i: Int -> i }
+		"half" -> return { i: Int -> i / 2 }
+		else -> return { i: Int -> 0 }
+	}
+}
+
