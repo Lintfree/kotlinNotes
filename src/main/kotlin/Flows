@@ -1,0 +1,11 @@
+// https://medium.com/@robert.baricevicpetrus/kotlin-flows-animated-55640aa48ac9
+
+//flows:
+/*
+Thinking about Flows
+You could think of a Flow like a conveyor belt inside a factory, and each item transported by the said belt as a piece of data, for example:
+
+Let’s say that we are creating a Video Game Weapon storage facility. Each Weapon is produced at random and in real time.
+We want to store each Weapon the moment it is produced
+
+*/

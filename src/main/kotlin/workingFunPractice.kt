@@ -1,6 +1,6 @@
 import java.util.*
 
-
+/*
 fun sum(a: Int, b: Double, c: Int): Double {
 	return a + b + c
 }
@@ -33,7 +33,7 @@ fun findYears(depo: Double): Int {
 	}
 	return years
 }
-
+*/
 
 
 
@@ -151,6 +151,7 @@ One for you, one for me.
 Zaphod	One for Zaphod, one for me.
  */
 
+/*
 fun twofer(name: String): String {
 	return if (name != "") {
 		"One for $name, one for me."
@@ -159,6 +160,7 @@ fun twofer(name: String): String {
 	}
 
 }
+*/
 
 /*fun main (){
 	val name = readln()
@@ -351,7 +353,7 @@ fun main() {
 fun round(number: Int): Int? {
 	return if (number >= 1000) 0 else number
 }
-*/
+
 fun identity(x: Int): Int {
 	x.toString()
 	return x
@@ -361,7 +363,7 @@ fun half(x: Int): Int = x / 2
 
 
 fun zero(x: Int): Int = 0
-
+*/
 
 
 /*
@@ -376,7 +378,7 @@ fun generate(functionName: String): (Int) -> Int {
 
 }
 
- */
+
 
 //Better and shorter, I overthinked it
 //The generate function receives a functionName as input,
@@ -391,3 +393,4 @@ fun generate(functionName: String): (Int) -> Int {
 	}
 }
 
+ */

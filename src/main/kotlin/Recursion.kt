@@ -177,3 +177,185 @@ fun fibonacciLoop(n: Int): Int {
 }
 
  */
+
+
+/*
+var n = 6
+fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
+println(f(n))
+20
+
+
+The output of f(6) can be determined by evaluating the function recursively:
+
+f(6) calls f(5) + f(4) + f(3) //not considered in the sum because all calls are greater than 2
+f(5) calls f(4) + f(3) + f(2)
+f(4) calls f(3) + f(2) + f(1)
+f(3) calls f(2) + f(1) + f(0)
+
+Now let’s work our way back up:
+
+f(3) evaluates to 2 + 1 + 0 = 3
+f(4) evaluates to 3 + 2 + 1 = 6
+f(5) evaluates to 6 + 3 + 2 = 11
+Finally, f(6) evaluates to 11 + 6 + 3 = 20.
+Therefore, the output of f(6) is 20.
+
+Let's delve into why the first call to `f(6)` isn't explicitly added to the subsequent recursive calls.
+
+In the recursive function `f(n)`, the base case is when `n` is less than or equal to 2.
+In that case, the function directly returns `n`.
+However, when `n` is greater than 2,
+the function recursively calls itself three times with the arguments `n - 1`, `n - 2`, and `n - 3`.
+These recursive calls are then added together.
+
+Here's the breakdown for `f(6)`:
+
+1. `f(6)` calls `f(5) + f(4) + f(3)`
+2. `f(5)` calls `f(4) + f(3) + f(2)`
+3. `f(4)` calls `f(3) + f(2) + f(1)`
+4. `f(3)` calls `f(2) + f(1) + f(0)`
+
+At this point, we reach the base cases: >2
+anything further are not evaluated because they are less than or equal to 2.
+
+
+- `f(2)` returns `2`
+- `f(1)` returns `1`
+- `f(0)` returns `0`
+
+since we now hit our base cases we now work back up to f5 using the same process
+it keeps going because f keeps calling itself until it reaches the base cases then it returns the value of the base cases
+Now let's work our way back up:
+
+- `f(3)` evaluates to `2 + 1 + 0 = 3`
+- `f(4)` evaluates to `3 + 2 + 1 = 6`
+- `f(5)` evaluates to `6 + 3 + 2 = 11`
+
+Finally, `f(6)` evaluates to `11 + 6 + 3 = 20`.
+
+The initial call to `f(6)` is implicitly included in the sum of the recursive calls.
+It serves as the starting point, and the subsequent additions build upon it.
+So, while it's not explicitly written as part of the sum, it contributes to the final result.
+
+In summary, the output of `f(6)` is 20.
+
+Let’s explore the differences between recursion and iteration:
+
+Definition:
+Recursion: In recursion, a function calls itself directly or indirectly.
+Iteration: Iteration involves using loops (such as for or while) to repeatedly execute a set of instructions.
+
+Execution:
+Recursion: The repeated execution in recursion happens through function calls.
+Iteration: In iteration, the repetition occurs within a loop construct.
+
+Base Case:
+Recursion: Recursive functions have a base case that terminates the recursion.
+Iteration: Loops continue until a specified condition (usually defined by the loop control) is met.
+
+Time Complexity:
+Recursion: The time complexity of recursive algorithms can be complex due to repeated function calls.
+Solving recurrences helps analyze it.
+Iteration: The time complexity of iteration depends on the number of cycles executed inside the loop.
+
+Usage:
+Recursion: Shorter code, but higher time complexity. Useful when code length matters more than execution time.
+Iteration: Larger code, but generally lower time complexity.
+Preferred for efficiency when the number of iterations is large.
+
+Overhead:
+Recursion: Involves overhead due to repeated function calls.
+Iteration: No such overhead.
+
+Infinite Repetition:
+Recursion: Infinite recursive calls can lead to system crashes.
+Iteration: Stops when memory is exhausted.
+In summary, choose recursion for concise code and simplicity,
+but be cautious about potential exponential time complexity.
+Opt for iteration when efficiency matters and the number of iterations is significant.
+ */
+
+
+/*
+fun digitSum(number: Int): Int {
+	// Base case: if number is 0, return 0
+	if (number == 0) {
+		return 0
+	}
+	// Take the last digit of the number and add it to the sum of the remaining digits
+	return number % 10 + digitSum(number / 10)
+}
+
+fun main() {
+	println(digitSum(12345))
+}
+*/
+
+
+//This code snippet is a recursive function called digitSum, which calculates the sum of the digits of a given integer.
+// If the input is 0, it returns 0. Otherwise,
+// it calculates the sum of the last digit (n % 10) and calls itself with the remaining digits (n / 10).
+/*
+fun digitSum(n: Int): Int {
+    if (n == 0) {
+        return 0
+    }
+    val lastDigit = n % 10  // Calculate the last digit
+    val remainingDigits = n / 10  // Calculate the remaining digits
+    val sumOfRemainingDigits = digitSum(remainingDigits)  // Recursively call digitSum with the remaining digits
+    return lastDigit + sumOfRemainingDigits  // Return the sum of the last digit and the sum of the remaining digits
+}
+
+Sure! Let's go through an example to illustrate the process using basic math:
+
+If we call digitSum(123), here's how it would be calculated:
+
+digitSum(123) = 3 + digitSum(12)
+digitSum(12) = 2 + digitSum(1)
+digitSum(1) = 1 + digitSum(0)
+digitSum(0) = 0
+Now we can substitute the values back:
+
+digitSum(1) = 1 + 0 = 1
+digitSum(12) = 2 + 1 = 3
+digitSum(123) = 3 + 3 = 6
+So, the sum of the digits of 123 is 6.
+ */
+
+//Write a recursive function which would return true if the given number is prime and false if it is not.
+//
+//Hint: a second parameter is used to indicate which number the function is currently assuming to be the divisor.
+
+fun isPrime(n: Int, i: Int = 2): Boolean {
+	// a few base cases here
+	if ( n < 2) {
+		return false
+	}
+	if (n == 2) {
+		return true
+	}
+	if (n % i == 0) {
+		return false
+	}
+	if (i * i > n) {
+		return true
+	}
+	// recursive case here
+	return isPrime(n, i + 1)
+}
+
+fun main() {
+	val n = readln().toInt()
+	print(isPrime(n))
+}
+
+/*
+fun isPrime(n: Int, i: Int = 2): Boolean = when {
+    n <= 1 -> false
+    i >= n -> true
+    n % i == 0 -> false
+    i <= 1 -> isPrime(n)
+    else -> isPrime(n, i + 1)
+}
+ */
