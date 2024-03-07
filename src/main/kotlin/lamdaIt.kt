@@ -105,4 +105,167 @@ val loudNarration: (String, String) -> String = { message, tone ->
 Unlike regular functions, lambdas cannot have default arguments.
 The function type is the only information Kotlin retains about the lambda, and it is not posssible to include default arguments.
 Named arguments are also not supported in lambdas.
+
+
+Functions without names
+To create a Kotlin function that isn't bound to its name, you can use either an anonymous function or a lambda expression:
+
+fun(arguments): ReturnType { body } – this is commonly called an "anonymous function".
+
+{ arguments -> body } – this is commonly called a "lambda expression".
+
+To better understand it, take a look at the example below. Here, two functions are declared: they are declared in different ways, but they do the same thing:
+
+fun(a: Int, b: Int): Int {
+    return a * b
+} // normal function but no name
+
+{ a: Int, b: Int -> a * b } // we shifted the parameter or argument in the curly braces
+As you see, they compute the multiplication of two numbers.
+
+Both these functions have a reasonable type: (Int, Int) -> Int. So, types work here just the way they do for top-level functions discussed in previous topics.
+
+Note that if you want to declare a lambda without arguments, you do not need to write the "arrow symbols".
+A lambda without argument definition looks like this: { body }.
+
+You may ask: how can we use a function without a known name? The answer is: there are several options.
+
+For example, you can assign the function to a variable and then invoke it by invoking the variable:
+
+val mul1 = fun(a: Int, b: Int): Int {
+    return a * b
+}
+
+val mul2 = { a: Int, b: Int -> a * b }
+
+println(mul1(2, 3))  // prints "6"
+println(mul2(2, 3))  // prints "6" too
+Also, you can pass such a function as an argument or return such a function from another function.
+
+Finally, you can place parentheses with desired arguments right after the function definition to invoke it in place.
+However, that doesn't make much sense. So, mostly the first three described options are used.
+
+The process of creating these two functions is quite similar, but lambdas have a more concise and convenient syntax.
+Therefore, lambdas are almost always used to create a function at runtime in real life.
+Moreover, there are programmers who don't stick to Kotlin official naming rules and can say "an anonymous function" instead of "a lambda".
+Despite the fact that everybody understands them, we suggest that you use the proper naming.
+
+Lambdas and syntactic sugar
+There are ways to make code more readable for human beings without changing the code logic.
+If there is such a way in a programming language and it relates to syntax, we call it syntactic sugar.
+Kotlin promotes Functional Programming so there is syntactic sugar for it.
+
+Let's recall this example of passing a function as an argument:
+
+fun isNotDot(c: Char): Boolean = c != '.'
+val originalText = "I don't know... what to say..."
+val textWithoutDots = originalText.filter(::isNotDot)
+println(textWithoutDots) // I don't know what to say
+Simply put, we have created the function isNotDot, which returns Boolean and then uses originalText.filter,
+which will iterate over every char in the string, apply the isNotDot function, and then return a string without any dots.
+The filter excludes any char in the string that returns false.
+
+Just in case, there is a specific topic for filtering elements in collection.
+
+Now, let's rewrite it to pass a lambda:
+
+val originalText = "I don't know... what to say..."
+val textWithoutDots = originalText.filter({ c: Char -> c != '.' })
+println(textWithoutDots) // I don't know what to say
+It works! First of all, we don't need to specify a function and then take reference from it.
+
+Kotlin infers types of many objects, and here specifying the c type isn't necessary:
+
+originalText.filter({ c -> c != '.' })
+Second, there are situations when the lambda is passed as the last argument.
+In such a case, Kotlin provides a way to eliminate bracket sequences ({ }) and write the lambda outside the parentheses:
+
+originalText.filter() { c -> c != '.' }
+If the parentheses are left empty after that operation, you can remove them:
+
+originalText.filter { c -> c != '.' }
+Please note that sometimes function reference is more readable than a lambda,
+and there is no right answer which one is preferable.
+However, if the code is quite complex, instead of copy-pasting some lambda,
+it may be better to use function reference for easier maintenance and reusability.
+
+Implicit name of a single parameter: it
+Finally, when there is a single parameter in a lambda, there is an opportunity to skip it.
+The parameter is available under the it name.
+The type of it is inferred from the type of the argument being passed to the lambda.
+The final version of the code that removes dots is this:
+
+val originalText = "I don't know... what to say..."
+val textWithoutDots = originalText.filter { it != '.' }
+Pretty impressive, huh?
+
+Returning from a lambda expression in Kotlin is achieved using return@label, where label is a tag,
+usually matching the name of the higher-order function in the context of which the lambda was called.
+For example, when using someLambda as a lambda expression in a higher-order function, the return from the lambda would look like return@someLambda.
+
+This is particularly useful in cases where the lambda is used in functions such as forEach, map, let, and so on.
+Returning with return@label allows for exiting the lambda expression without interrupting the execution of the outer function.
+
+Here is an example of using return@label in Kotlin:
+
+listOf(1, 2, 3, 4).forEach {
+    if (it == 3) return@forEach  // Skipping number 3
+    println(it)
+}
+println("End")
+In this example, when it equals 3, the lambda expression is interrupted and continues with the next iteration of the forEach loop.
+The println("End") will execute after the loop completes.
+
  */
+
+//Write a lambda expression that calculates a⋅x2+b⋅x+c
+//, where a, b, c are variables and x is the lambda parameter. The lambda is to have the (Int) -> Int type.
+//val a = 1
+//val b = 2
+//val c = 3
+//val lambda: (Int) -> Int = { x -> a * x * x + b * x + c }
+// or
+// val lambda = { x -> a * it * it + b * it + c }
+
+//Suppose you have an originalPredicate: (Char) -> Boolean predicate.
+//It is necessary to complete the declaration of the notPredicate predicate; the predicate takes the Char variable.
+//
+//The notPredicate predicate returns the opposite of the originalPredicate.
+
+//val originalPredicate: (Char) -> Boolean = { it != '.' }
+
+//val notPredicate: (Char) -> Boolean = { it -> !originalPredicate(it) }
+
+/*
+val lambda: (Int, Int) -> Int = { a, b ->
+	if (a > b) a
+	else b
+}
+ or
+val lambda: (Int, Int) -> Int = ::maxOf  // :: refers to the maxOf function based on Int, Int -> Int
+ */
+
+fun fizzbuzz(from: Int, to: Int, transformation: (Int) -> String) {
+	for (number in from..to) {
+		println(transformation(number))
+	}
+}
+
+fun main() {
+	fizzbuzz(1, 100) { number ->
+		if (number % 15 == 0) {
+			return@fizzbuzz "fizzbuzz"
+		}
+		if (number % 3 == 0) {
+			return@fizzbuzz "fizz"
+		}
+		if (number % 5 == 0) {
+			return@fizzbuzz "buzz"
+		}
+		return@fizzbuzz number.toString()
+	}
+}
+
+fun compose(g: (Int) -> Int, h: (Int) -> Int): (Int) -> Int {
+	return { it -> g(h(it)) }
+}

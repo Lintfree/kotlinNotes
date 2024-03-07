@@ -392,5 +392,18 @@ fun generate(functionName: String): (Int) -> Int {
 		else -> return { i: Int -> 0 }
 	}
 }
-
  */
+
+// if the length of the input string is greater than 5, it returns null; otherwise it returns the string.
+// It has to return 0 in null case.
+
+fun main() {
+	val argument = readln()
+	println(check(argument)?.length ?: "0")
+}
+
+// do not change function below
+
+fun check(name: String): String? {
+	return if (name.length > 5) null else name
+}
