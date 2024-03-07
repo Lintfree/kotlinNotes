@@ -327,6 +327,7 @@ So, the sum of the digits of 123 is 6.
 //
 //Hint: a second parameter is used to indicate which number the function is currently assuming to be the divisor.
 
+/*
 fun isPrime(n: Int, i: Int = 2): Boolean {
 	// a few base cases here
 	if ( n < 2) {
@@ -350,6 +351,8 @@ fun main() {
 	print(isPrime(n))
 }
 
+ */
+
 /*
 fun isPrime(n: Int, i: Int = 2): Boolean = when {
     n <= 1 -> false
@@ -359,3 +362,16 @@ fun isPrime(n: Int, i: Int = 2): Boolean = when {
     else -> isPrime(n, i + 1)
 }
  */
+
+fun f(n: Int) {
+	if (n > 0) g(n - 1)
+}
+
+fun g(n: Int) {
+	print("*")
+	if (n > 1) f(n - 3)
+}
+
+fun main() {
+	f(10)
+}
