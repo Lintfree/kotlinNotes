@@ -397,6 +397,7 @@ fun generate(functionName: String): (Int) -> Int {
 // if the length of the input string is greater than 5, it returns null; otherwise it returns the string.
 // It has to return 0 in null case.
 
+/*
 fun main() {
 	val argument = readln()
 	println(check(argument)?.length ?: "0")
@@ -407,3 +408,36 @@ fun main() {
 fun check(name: String): String? {
 	return if (name.length > 5) null else name
 }
+ */
+
+open class Wood(val age: Int) {
+	fun getWoodInfo(): String {
+		return "age $age"
+	}
+}
+
+class Pine(val isSpiny: Boolean, age: Int) : Wood(age) {
+	fun getPineInfo(): String {
+		return getWoodInfo() + ", spiny $isSpiny"
+	}
+}
+
+fun main() {
+	val pine = Pine(true, 3)
+	println(pine.getPineInfo() + ", " + pine.getWoodInfo())
+}
+
+/*
+example hierarchy:
+open class Animal
+
+open class Mammal : Animal()
+class Lion : Mammal()
+
+open class Fish : Animal()
+class Salmon : Fish()
+class Carp : Fish()
+
+open class Bird : Animal()
+class Eagle : Bird()
+ */
