@@ -29,7 +29,7 @@ List(5) { 6 }.joinToString("; ")
 // The default separator is ", ", the resulting string is: "A, A, A, A, A"
 List(5) { 'A' }.joinToString()
  */
-
+/*
 fun main() {
 	val wordLength = 5
 	val alphabet = "ABCD"
@@ -53,3 +53,4 @@ fun isCorrectInput(userInput: String, wordLength: Int, alphabet: String): Any {
 		else -> userInput
 		}
 	}
+*/
