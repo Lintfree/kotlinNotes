@@ -203,3 +203,8 @@ val temp = numbers[0]
 numbers[0] = numbers[numbers.size - 1]
 numbers[numbers.size - 1] = temp
 */
+
+fun main() {
+	val characters = "azed".toCharArray()
+	println(characters.joinToString())
+}
