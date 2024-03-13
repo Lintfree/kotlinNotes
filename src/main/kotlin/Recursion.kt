@@ -363,6 +363,7 @@ fun isPrime(n: Int, i: Int = 2): Boolean = when {
 }
  */
 
+/*
 fun f(n: Int) {
 	if (n > 0) g(n - 1)
 }
@@ -374,4 +375,39 @@ fun g(n: Int) {
 
 fun main() {
 	f(10)
+}
+ */
+
+//Implement a recursive function F with the following rules:
+//
+//f(n) = f(n-1)/2 + 2*f(n-2)
+//
+//f(0) = 4
+//
+//f(-1) = 1
+//
+//The function needs to return the result of the calculation.
+//
+//Sample Input 1:
+//
+//5
+//Sample Output 1:
+//
+//39
+
+fun f(n: Int): Int {
+	// your code here
+
+	if (n == 0) {
+		return 4
+	}
+	if (n == -1) {
+		return 1
+	}
+	return f(n - 1) / 2 + 2 * f(n - 2)
+}
+
+fun main() {
+	val n = readln()!!.toInt()
+	print(f(n))
 }
