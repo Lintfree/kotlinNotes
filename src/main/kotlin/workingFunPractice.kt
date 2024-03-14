@@ -1,5 +1,3 @@
-import java.util.*
-
 /*
 fun sum(a: Int, b: Double, c: Int): Double {
 	return a + b + c
@@ -441,3 +439,38 @@ class Carp : Fish()
 open class Bird : Animal()
 class Eagle : Bird()
  */
+
+
+//Given a class named Car containing three properties:
+// the Int property year, the String property make, and the Int property speed.
+//
+//Add the following member functions to the class:
+//
+//accelerate adds 5 to the speed property each time it's called;
+//decelerate subtracts 5 from the speed property each time it's called.
+// The speed cannot be less than zero, so if you get a negative speed, just make it equal to 0.
+class Car(val make: String, val year: Int) {
+
+	var speed: Int = 0
+
+	fun accelerate() {
+		speed += 5
+	}
+
+	/*
+	fun decelerate() {
+		if (speed - 5 < 0) {
+			speed = 0
+		} else if (speed in 1..5) {
+			speed = 0
+		} else if (speed > 5) {
+			speed  -= 5
+		}
+	}
+}
+
+*/
+    fun decelerate() {
+        speed = maxOf(0, speed - 5)
+    }
+}

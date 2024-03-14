@@ -245,6 +245,7 @@ val lambda: (Int, Int) -> Int = { a, b ->
 val lambda: (Int, Int) -> Int = ::maxOf  // :: refers to the maxOf function based on Int, Int -> Int
  */
 
+/*
 fun fizzbuzz(from: Int, to: Int, transformation: (Int) -> String) {
 	for (number in from..to) {
 		println(transformation(number))
@@ -268,4 +269,32 @@ fun main() {
 
 fun compose(g: (Int) -> Int, h: (Int) -> Int): (Int) -> Int {
 	return { it -> g(h(it)) }
+}
+
+ */
+
+/*
+Write a lambda expression that accepts two long arguments as range borders
+and returns the multiplication of all the numbers in this range (inclusively).
+Guaranteed that 0 <= left border <= right border. If left border == right border then the result is any border.
+
+Note that you don't need to write in one line, you can use loops.
+ */
+
+
+val lambda: (Long, Long) -> Long = { left, right ->
+	var result = 1L
+	for (i in left..right) {
+		result *= i
+	}
+	result
+}
+
+
+
+// use reduce from kotlin.collections
+//val lambda: (Long, Long) -> Long = { left, right -> left * right }
+
+fun main() {
+	println(lambda(1, 10))
 }
