@@ -408,6 +408,7 @@ fun check(name: String): String? {
 }
  */
 
+/*
 open class Wood(val age: Int) {
 	fun getWoodInfo(): String {
 		return "age $age"
@@ -424,6 +425,8 @@ fun main() {
 	val pine = Pine(true, 3)
 	println(pine.getPineInfo() + ", " + pine.getWoodInfo())
 }
+
+ */
 
 /*
 example hierarchy:
@@ -449,6 +452,7 @@ class Eagle : Bird()
 //accelerate adds 5 to the speed property each time it's called;
 //decelerate subtracts 5 from the speed property each time it's called.
 // The speed cannot be less than zero, so if you get a negative speed, just make it equal to 0.
+/*
 class Car(val make: String, val year: Int) {
 
 	var speed: Int = 0
@@ -456,6 +460,8 @@ class Car(val make: String, val year: Int) {
 	fun accelerate() {
 		speed += 5
 	}
+
+ */
 
 	/*
 	fun decelerate() {
@@ -470,7 +476,35 @@ class Car(val make: String, val year: Int) {
 }
 
 */
+
+/*
     fun decelerate() {
         speed = maxOf(0, speed - 5)
     }
+}
+
+ */
+
+/*
+fun carPrice(old: Int = 5, kilometers: Int = 100_000, maximumSpeed: Int = 120, automatic: Boolean = false) {
+	var price = 20000
+	price -= old * 2000
+	price += (maximumSpeed - 120) * 100
+	price -= (kilometers / 10000) * 200
+	price = if (automatic) price + 1500 else price
+	println(price)
+}
+*/
+
+fun main() {
+	val smartOne = Smartphone("Ericsong")
+	smartOne.price = -24 //-24-8 = -32
+	val smartTwo = Smartphone("iNokhe") // iNokhe has a price of -5-6=-11
+	print(smartTwo.price - smartOne.price)
+}
+
+
+class Smartphone(val name: String) {
+	var price: Int = -5
+		get() = name.length - field
 }
