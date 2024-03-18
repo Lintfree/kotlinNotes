@@ -145,6 +145,7 @@ val newHumanString = """
     "friends":["Mike","Helen"]}""".trimIndent()
 
 val newHuman = humanAdapter.fromJson(newHumanString)
+
 The fromJson method doesn't return a Human, it returns a Human? object.
 This is because it can be nullable (the fromJson method may not recognize the supplied JSON string), so ?. is used to access it safely.
 
@@ -169,7 +170,8 @@ val jsonStr =
 val newHumanList = humanListAdapter.fromJson(jsonStr)
 
 Working with JSON
-In the previous section, we learned how to retrieve objects from JSON via deserialization. Now we'll look at some examples of how to make use of them:
+In the previous section, we learned how to retrieve objects from JSON via deserialization.
+Now we'll look at some examples of how to make use of them:
 
 It's simple to find out the name of the newHuman object we created with our adapter:
 
@@ -233,5 +235,25 @@ for (h in humanList!!) {
 	}
 	]
 }
+
+ */
+
+/*
+class Tourist(val name: String, val age: Int, val visitedCountries: Array<String>)
+
+val moshi = Moshi.Builder()
+	.add(KotlinJsonAdapterFactory())
+	.build()
+
+val touristAdapter = moshi.adapter(Tourist::class.java)
+
+val touristString = """
+    {"name":"Jacky",
+    "age":23, 
+    "visitedCountries":["Israel","Argentina", "Malaysia"]}""".trimIndent()
+
+val newTourist = touristAdapter.fromJson(touristString)
+
+println(visitedCountries(newTourist!!))
 
  */
