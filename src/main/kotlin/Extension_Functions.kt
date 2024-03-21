@@ -152,3 +152,33 @@ class Application(val name: String) {
 		println(arg3)
 	}
 }
+
+fun first(value: Int, func: (Int) -> Int): Int = func(value)
+fun second(func: (Int) -> Int, value: Int): Int = func(value)
+
+//How can we call them?
+
+
+fun main() {
+	println(first(5, { i -> i }))
+	println(first(5, { it }))
+	println(first(5) { it })
+	println(second({ i -> i }, 5))
+	println(second({ it }, 5))
+	//println(second(5) { it })
+}
+
+/*
+first(5, { i -> i })
+
+first(5, { it })
+
+first(5) { it }
+
+second({ i -> i }, 5)
+
+second({ it }, 5)
+
+second(5) { it }
+
+*/

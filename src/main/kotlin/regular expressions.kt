@@ -253,6 +253,11 @@ val regex = Regex("\\\\")
 Interesting: seemingly, we do screen \ with \\.
 But if we keep three backslashes, Kotlin will decide that one of it is for the quotation mark (\" is interpreted as escape sequence for " in String literals).
 So we need four backslashes. Later, we’ll talk about how to avoid multiple levels of escaping.
+
+The "?" often symbolizes optional elements, not any single character.
+"." match any single character.
+
+"?" match any single character or nothing
 */
 
 fun main() {

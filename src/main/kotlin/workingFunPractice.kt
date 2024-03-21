@@ -496,6 +496,7 @@ fun carPrice(old: Int = 5, kilometers: Int = 100_000, maximumSpeed: Int = 120, a
 }
 */
 
+/*
 fun main() {
 	val smartOne = Smartphone("Ericsong")
 	smartOne.price = -24 //-24-8 = -32
@@ -507,4 +508,26 @@ fun main() {
 class Smartphone(val name: String) {
 	var price: Int = -5
 		get() = name.length - field
+}
+
+ */
+
+/*
+Imagine that you're a tutor.
+You need to write a program that parses your students' answers and prints true if the answer is I can do my homework on time!
+or I can't do my homework on time! and false in all other cases.
+
+To complete this task, use the function matches().
+ */
+
+fun main() {
+	val answer = readln()
+
+	println(
+		when (answer) {
+			"I can do my homework on time!" -> true
+			"I can't do my homework on time!" -> true
+			else -> false
+		}
+	)
 }

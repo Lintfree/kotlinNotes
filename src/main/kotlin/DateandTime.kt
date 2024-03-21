@@ -1,3 +1,7 @@
+import java.time.Instant
+import java.util.*
+import kotlinx.datetime.*
+
 /*
 Coordinated Universal Time (UTC) is the world's principal time standard for regulating clocks and time.
 The time is based on the number of seconds that have elapsed since 12:00:00 midnight, January 1, 1970, Coordinated Universal Time (UTC).
@@ -350,3 +354,33 @@ fun main() {
 	println(nextMonth(date))
 }
 */
+
+/*
+val instant1 = Instant.parse("2000-01-01T20:00:00Z")
+val instant2 = Instant.parse("2000-10-14T00:00:00Z")
+
+val period: DateTimePeriod = instant1.periodUntil(instant2, TimeZone.UTC)
+
+println(period)
+// P9M12DT4H
+
+println("Months: ${period.months} Days: ${period.days} Hours: ${period.hours}")
+// Months: 9 Days: 12 Hours: 4
+ */
+
+
+import kotlinx.datetime.*
+
+fun howManyDays(year1: Int, month1: Int, day1: Int, year2: Int, month2: Int, day2: Int): Int {
+
+	val date1 = LocalDate(year1, month1, day1)
+	val date2 = LocalDate(year2, month2, day2)
+	return date1.daysUntil(date2)
+}
+
+fun main() {
+	val (year1, month1, day1) = readln().split(" ").map { it.toInt() }
+	val (year2, month2, day2) = readln().split(" ").map { it.toInt() }
+
+	println(howManyDays(year1, month1, day1, year2, month2, day2))
+}
