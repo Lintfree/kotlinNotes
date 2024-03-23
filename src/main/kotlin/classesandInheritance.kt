@@ -1,6 +1,6 @@
 
 /*
-class classesandInheritance {
+class classes and Inheritance {
 }
 
 Here's how you usually create a class in Kotlin:
