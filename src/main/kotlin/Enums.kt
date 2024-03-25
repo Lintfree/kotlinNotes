@@ -224,6 +224,7 @@ val color: Rainbow = Rainbow.GREEN
 println(color.ordinal)
  */
 
+/*
 enum class Rainbow(val order: Int) {
 	RED(1), ORANGE(2), YELLOW(3), GREEN(4), BLUE(5), INDIGO(6), VIOLET(7)
 }
@@ -233,6 +234,29 @@ fun main(): Unit {
 	val input = readln().uppercase()
 	val rainbow = Rainbow.valueOf(input)
 	println(rainbow.order)
+}
+*/
+
+
+//Write a program that declares an enum DaysOfTheWeek
+// and prints the name of each enum's instance on a new line, starting from SUNDAY.
+
+
+enum  class DaysOfTheWeek {
+	SUNDAY,
+	MONDAY,
+	TUESDAY,
+	WEDNESDAY,
+	THURSDAY,
+	FRIDAY,
+	SATURDAY,
+
+}
+
+fun main() {
+	for (day in DaysOfTheWeek.values()) {
+		println(day)
+	}
 }
 
 
