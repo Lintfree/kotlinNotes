@@ -280,6 +280,7 @@ Sample Output 1:
 seven, eight, nine
  */
 
+/*
 fun main() {
 	val inputList: MutableList<MutableList<String>> = mutableListOf()
 	val n = readLine()!!.toInt()
@@ -291,6 +292,8 @@ fun main() {
 	println(inputList[2].joinToString(separator = ", " ))
 
 }
+
+ */
 
 /*
 val mutList3D = mutableListOf(

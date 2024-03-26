@@ -538,5 +538,34 @@ fun main() {
 
  */
 
+/*
+Cube of zeros
+Create a 3x3x3 three-dimensional list that contains elements of type Int and is filled with zeros (0).
+
+Print the list of lists in one string (just use print() or println() function).
 
 
+fun main() {
+
+	val longlist = mutableListOf(
+		mutableListOf(
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0)
+		),
+		mutableListOf(
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0)
+		),
+		mutableListOf(
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0),
+			mutableListOf<Int>(0, 0, 0)
+		)
+	)
+
+	print(longlist)
+}
+*/
+fun main() = List(3) { List(3) { List(3) { 0 } } }.let(::print)
