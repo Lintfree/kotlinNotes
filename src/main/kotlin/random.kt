@@ -271,3 +271,17 @@ fun generatePredictablePassword(seed: Int): String {
 fun main() {
 	println(generatePredictablePassword(66))
 }
+
+
+/*
+Rock, paper, scissors
+Let's play a game. We'll write a program that simulates rock, paper and scissors.
+ */
+
+fun makeDecision(): String {
+	return when (Random.nextInt(1, 4)) {
+		1 -> "Rock"
+		2 -> "Paper"
+		else -> "Scissors"
+	}
+}
