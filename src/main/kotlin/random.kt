@@ -259,6 +259,7 @@ for (i in 0..5) {
 }
  */
 
+/*
 fun generatePredictablePassword(seed: Int): String {
 	var randomPassword = ""
 	val randomGenerator = Random(seed)
@@ -285,3 +286,5 @@ fun makeDecision(): String {
 		else -> "Scissors"
 	}
 }
+
+ */

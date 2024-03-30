@@ -168,3 +168,15 @@ fun iterator(map: Map<String, Int>) {
 
 fun nullOrNotNull(number: Int?): Int = if (number == null) -1 else number
 */
+
+/*
+fun reverse(input: Int?): Int {
+	if (input != null) {
+		return input.toString().reversed().toInt()
+	} else {
+		return -1
+	}
+}
+
+fun reverse(input: Int?) = input?.toString()?.reversed()?.toInt() ?: -1
+*/
