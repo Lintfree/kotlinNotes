@@ -395,6 +395,7 @@ fun main() {
 //
 //39
 
+/*
 fun f(n: Int): Int {
 	// your code here
 
@@ -410,4 +411,53 @@ fun f(n: Int): Int {
 fun main() {
 	val n = readln()!!.toInt()
 	print(f(n))
+}
+*/
+
+/*Given function F, what's the sum of all numbers it prints if called as f(2)?
+Here are the steps involved when calling recursiveFunction(2):
+
+recursiveFunction(2, 0) is called.
+Prints: 2
+Calls recursiveFunction(3, 2)
+recursiveFunction(3, 2) is called.
+Prints: 3
+Calls recursiveFunction(4, 5)
+recursiveFunction(4, 5) is called.
+Prints: 4
+Calls recursiveFunction(5, 9)
+recursiveFunction(5, 9) is called.
+Prints: 5
+Returns 14 to the previous call (recursiveFunction(4, 5)).
+recursiveFunction(4, 5) continues:
+Calls recursiveFunction(7, 14)
+recursiveFunction(7, 14) is called.
+Prints: 7
+Calls recursiveFunction(8, 21)
+recursiveFunction(8, 21) is called.
+Prints: 8
+Returns 29 to the previous call (recursiveFunction(7, 14)).
+recursiveFunction(7, 14) continues:
+Calls recursiveFunction(10, 29)
+recursiveFunction(10, 29) is called.
+Prints: 10
+Returns 39 to the previous call (recursiveFunction(7, 14)).
+recursiveFunction(7, 14) continues:
+Returns 39 to the initial call (recursiveFunction(2, 0)).
+So, the sum of all numbers printed when calling recursiveFunction(2) is 39.
+ */
+fun recursiveFunction(number: Int, sum: Int = 0): Int {
+	println(number)
+	val newSum = sum + number
+	if (number < 5) {
+		val sum1 = recursiveFunction(number + 1, newSum)
+		val sum2 = recursiveFunction(number + 3, sum1)
+		return sum2
+	}
+	return newSum
+}
+
+fun main() {
+	val totalSum = recursiveFunction(2)
+	println("Sum of all numbers printed: $totalSum")
 }

@@ -568,4 +568,4 @@ fun main() {
 	print(longlist)
 }
 */
-fun main() = List(3) { List(3) { List(3) { 0 } } }.let(::print)
+//fun main() = List(3) { List(3) { List(3) { 0 } } }.let(::print)
